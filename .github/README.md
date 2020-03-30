@@ -70,8 +70,8 @@ Alternatively, please [Create an Issue](https://github.com/jonpontet/hide-admin-
 
 ## Screenshots
 
-![Does your WordPress Admin look like this mess?](https://github.com/jonpontet/hide-admin-notices/.github/screenshot-1.png)
-![Activate this plugin and you will tidy-up the mess!](https://github.com/jonpontet/hide-admin-notices/.github/screenshot-2.png)
+![Does your WordPress Admin look like this mess?](https://github.com/jonpontet/hide-admin-notices/blob/master/.github/screenshot-1.png)
+![Activate this plugin and you will tidy-up the mess!](https://github.com/jonpontet/hide-admin-notices/blob/master/.github/screenshot-2.png)
 
 ## Changelog
 
