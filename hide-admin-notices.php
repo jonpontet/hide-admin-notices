@@ -1,40 +1,45 @@
-<?php 
-/*
-    Plugin Name: Hide Admin Notices
-    Description: Plugin to Hide Admin Notices
-    Version: 1.0.0
-    Author: Hetal
-    Text Domain: hide-admin-notices
-*/
+<?php
+/**
+ * @link              https://jonpontet.com
+ * @since             1.0.0
+ * @package           Hide_Admin_Notices
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Hide Admin Notices
+ * Plugin URI:        https://jonpontet.com/hide-admin-notices
+ * Description:       Hide the clutter in your WordPress Admin and focus on what's important - your content.
+ * Version:           1.0.0
+ * Author:            Jon Pontet
+ * Author URI:        https://jonpontet.com
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       hide-admin-notices
+ * Domain Path:       /languages
+ */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/*
-   Plugin Version 1.0.0
-*/
-define( 'Hide_Admin_Notices_VERSION', '1.0.0' );
-
 /**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
+ * Define path to this file constant.
+ *
+ * @since    1.0.0
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-hide-admin-notices.php';
+define( 'HIDE_ADMIN_NOTICES_PLUGIN_FILE', __FILE__ );
+
+require plugin_dir_path( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) . 'includes/class-hide-admin-notices.php';
 
 /**
  * Begins execution of the plugin.
  *
- * Since everything within the plugin is registered via hooks,
- * then kicking off the plugin from this point in the file does
- * not affect the page life cycle.
- *
  * @since    1.0.0
  */
-function run_hide_admin_notices () {
+function run_hide_admin_notices() {
 	$plugin = new Hide_Admin_Notices();
 	$plugin->run();
+
 }
+
 run_hide_admin_notices();
-?>
