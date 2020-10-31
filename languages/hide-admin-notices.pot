@@ -46,7 +46,7 @@ msgid "Hide Admin Notices"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://jonpontet.com/hide-admin-notices"
+msgid "https://theeasyweb.co/hide-admin-notices"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -60,5 +60,5 @@ msgid "Jon Pontet"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://jonpontet.com"
+msgid "https://theeasyweb.co"
 msgstr ""

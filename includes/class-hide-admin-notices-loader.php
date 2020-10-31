@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://jonpontet.com
+ * @link       https://theeasyweb.co
  * @since      1.0.0
  *
  * @package    Hide_Admin_Notices
@@ -19,7 +19,7 @@
  *
  * @package    Hide_Admin_Notices
  * @subpackage Hide_Admin_Notices/includes
- * @author     Jon Pontet <hello@jonpontet.com>
+ * @author     The Easy Web Co. <hello@theeasyweb.co>
  */
 class Hide_Admin_Notices_Loader {
 

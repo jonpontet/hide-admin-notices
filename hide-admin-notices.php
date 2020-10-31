@@ -1,16 +1,16 @@
 <?php
 /**
- * @link              https://jonpontet.com
+ * @link              https://theeasyweb.co
  * @since             1.0.0
  * @package           Hide_Admin_Notices
  *
  * @wordpress-plugin
  * Plugin Name:       Hide Admin Notices
- * Plugin URI:        https://jonpontet.com/hide-admin-notices
- * Description:       Hide the clutter in your WordPress Admin and focus on what's important - your content.
- * Version:           1.0.0
- * Author:            Jon Pontet
- * Author URI:        https://jonpontet.com
+ * Plugin URI:        https://theeasyweb.co/hide-admin-notices
+ * Description:       A lightweight plugin that hides all Notices, Update Nags & Messages in your WordPress Admin.
+ * Version:           1.0.1
+ * Author:            The Easy Web Co.
+ * Author URI:        https://theeasyweb.co
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       hide-admin-notices
