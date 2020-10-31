@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight plugin that hides all Notices, Update Nags & Messages in your WordPress Admin allowing you to focus on what's important - your content.
+A lightweight plugin that hides all Notices, Update Nags & Messages in your WordPress Admin allowing you to focus on your content.
 
 == Description ==
 
@@ -77,6 +77,9 @@ Great! Please put a message in the [Support Forum](https://wordpress.org/support
 2. Activate this plugin and you will tidy-up the mess!
 
 == Changelog ==
+
+= 1.0.2 =
+* Language update
 
 = 1.0.1 =
 * WordPress 5.5.3 support

@@ -8,7 +8,7 @@
  * Plugin Name:       Hide Admin Notices
  * Plugin URI:        https://theeasyweb.co/hide-admin-notices
  * Description:       A lightweight plugin that hides all Notices, Update Nags & Messages in your WordPress Admin.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            The Easy Web Co.
  * Author URI:        https://theeasyweb.co
  * License:           GPL-2.0+

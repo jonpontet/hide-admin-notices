@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hide Admin Notices\n"
-"POT-Creation-Date: 2020-04-01 18:41+0200\n"
-"PO-Revision-Date: 2020-04-01 18:46+0200\n"
+"POT-Creation-Date: 2020-10-31 15:44+0100\n"
+"PO-Revision-Date: 2020-10-31 15:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: hide-admin-notices.php\n"
@@ -43,22 +43,24 @@ msgstr "Achetez-moi un café"
 
 #. Plugin Name of the plugin/theme
 msgid "Hide Admin Notices"
-msgstr ""
+msgstr "Cacher les notifications administrateur WordPress"
 
 #. Plugin URI of the plugin/theme
 msgid "https://theeasyweb.co/hide-admin-notices"
-msgstr ""
+msgstr "https://theeasyweb.co/hide-admin-notices"
 
 #. Description of the plugin/theme
 msgid ""
-"Hide the clutter in your WordPress Admin and focus on what's important - "
-"your content."
+"A lightweight plugin that hides all Notices, Update Nags & Messages in your "
+"WordPress Admin."
 msgstr ""
+"Un plugin léger qui cache tous les notifications et messages dans votre "
+"administrateur WordPress."
 
 #. Author of the plugin/theme
-msgid "Jon Pontet"
-msgstr ""
+msgid "The Easy Web Co."
+msgstr "The Easy Web Co."
 
 #. Author URI of the plugin/theme
 msgid "https://theeasyweb.co"
-msgstr ""
+msgstr "https://theeasyweb.co"

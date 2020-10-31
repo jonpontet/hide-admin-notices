@@ -68,7 +68,7 @@ class Hide_Admin_Notices {
 		define( 'HIDE_ADMIN_NOTICES_BASEURL', plugin_dir_url( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) );
 		define( 'HIDE_ADMIN_NOTICES_VERSION', $this->version );
 		define( 'HIDE_ADMIN_NOTICES_NAME', $this->plugin_name );
-		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/jonpontet' );
+		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/theeasyweb' );
 	}
 
 	/**
