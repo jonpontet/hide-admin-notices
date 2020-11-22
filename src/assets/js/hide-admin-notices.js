@@ -48,16 +48,19 @@
                     });
                 }
             });
-            var interval = setInterval(function () {
-                // Wait for relocated notices (div.updated, #message) to be moved underneath H1 before moving all
-                // notices to panel
-                if ($('#wpbody-content>.wrap>div.updated,#wpbody-content>.wrap>div.notice,' +
-                    '#wpbody-content>.wrap>#message').length ===
-                    $relocatedAdminNotices.length) {
+
+            // Then monitor notices which get moved to .wrap
+            var startTime = new Date().getTime(),
+              interval = setInterval(function () {
+                // Stop monitoring after 5 seconds
+                if(new Date().getTime() - startTime > 5000){
                     clearInterval(interval);
-                    self.$allAdminNotices.detach().appendTo($hanPanel).show();
+                    return;
                 }
-            }, 500);
+                $('#wpbody-content>.wrap>div.updated').detach().appendTo($hanPanel).show();
+                $('#wpbody-content>.wrap>div.notice').detach().appendTo($hanPanel).show();
+                $('#wpbody-content>.wrap>#message').detach().appendTo($hanPanel).show();
+            }, 250);
         }
     }).init();
 })(jQuery);

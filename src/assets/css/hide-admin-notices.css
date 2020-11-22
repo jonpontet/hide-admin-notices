@@ -69,15 +69,15 @@
     display: inline;
 }
 
-/* Hide all notices on initial page load */
-#wpbody-content > div.update-nag,
-#wpbody-content > div#message,
-#wpbody-content > div.updated,
-#wpbody-content > div.notice,
-#wpbody-content > .wrap > div.update-nag,
-#wpbody-content > .wrap > div.updated,
-#wpbody-content > .wrap > div.notice,
-#wpbody-content > .wrap > div#message {
+/* Hide all notices after HAN has initialised */
+.hidden-admin-notices-active #wpbody-content > div.update-nag,
+.hidden-admin-notices-active #wpbody-content > div#message,
+.hidden-admin-notices-active #wpbody-content > div.updated,
+.hidden-admin-notices-active #wpbody-content > div.notice,
+.hidden-admin-notices-active #wpbody-content > .wrap > div.update-nag,
+.hidden-admin-notices-active #wpbody-content > .wrap > div.updated,
+.hidden-admin-notices-active #wpbody-content > .wrap > div.notice,
+.hidden-admin-notices-active #wpbody-content > .wrap > div#message {
     display: none !important;
 }
 
