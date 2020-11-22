@@ -3,20 +3,31 @@
     "use strict";
     ({
         init: function () {
-            this.$allAdminNotices = $('#wpbody-content>div.updated,#wpbody-content>div.notice,' +
-                '#wpbody-content>div.update-nag,#wpbody-content>#message');
-            if (this.$allAdminNotices.length) {
-                this.run();
+            this.$allAdminNotices = $('#wpbody-content>div.updated:visible,#wpbody-content>div.notice:visible,' +
+                '#wpbody-content>div.update-nag:visible,#wpbody-content>#message:visible');
+
+            // Do not run on WooCommerce pages
+            // Or no visible admin notices
+            if ($('body').hasClass('woocommerce-page') ||
+              !this.$allAdminNotices.length) {
+                return;
             }
+
+            this.run();
         },
         run: function () {
-            var self = this,
-                $relocatedAdminNotices = $('#wpbody-content>div.updated,#wpbody-content>div.notice,' +
-                    '#wpbody-content>#message'),
-                $hanPanel = $('<div id="hidden-admin-notices-panel" class="hidden" tabindex="-1" ' +
-                'aria-label="' + hide_admin_notices_l10n.screenMetaAriaLabel + '">')
-                .insertAfter('#screen-meta'),
-                $hanToggle = $('<div id="hidden-admin-notices-link-wrap" class="hide-if-no-js">')
+            // Immediately add active mode class
+            $('body').addClass('hidden-admin-notices-active');
+
+
+            var $hanPanel = $('<div id="hidden-admin-notices-panel" class="hidden" tabindex="-1" ' +
+              'aria-label="' + hide_admin_notices_l10n.screenMetaAriaLabel + '">')
+              .insertAfter('#screen-meta');
+
+            // Start by moving standard notices
+            this.$allAdminNotices.detach().appendTo($hanPanel).show();
+
+            var $hanToggle = $('<div id="hidden-admin-notices-link-wrap" class="hide-if-no-js">')
                 .insertAfter('#screen-meta-links'),
                 $hanToggleButton = $('<button type="button" id="hidden-admin-notices-link" class="button" ' +
                 'aria-controls="hidden-admin-notices-panel" aria-expanded="false"><span>' +
