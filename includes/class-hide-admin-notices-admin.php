@@ -50,8 +50,8 @@ class Hide_Admin_Notices_Admin {
 		if ( HIDE_ADMIN_NOTICES_BASENAME === $file ) {
 			$row_meta = array(
 				'donate' => '<a target="_blank" href="' . esc_url( HIDE_ADMIN_NOTICES_DONATE_LINK ) .
-				            '" aria-label="' . esc_attr__( 'Buy Me a Coffee', 'hide-admin-notices' ) .
-				            '">' . esc_html__( 'Buy Me a Coffee', 'hide-admin-notices' ) . '</a>',
+				            '" aria-label="' . esc_attr__( 'Give Thanks 🙏', 'hide-admin-notices' ) .
+				            '">' . esc_html__( 'Give Thanks 🙏', 'hide-admin-notices' ) . '</a>',
 			);
 
 			return array_merge( $links, $row_meta );
