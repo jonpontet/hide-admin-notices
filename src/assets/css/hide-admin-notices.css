@@ -86,5 +86,7 @@
 #wpbody-content > #hidden-admin-notices-panel > div#message,
 #wpbody-content > #hidden-admin-notices-panel > div.updated,
 #wpbody-content > #hidden-admin-notices-panel > div.notice {
+    /* Ensure all notices display in the panel */
+    position: relative!important;
     display: block!important;
 }
