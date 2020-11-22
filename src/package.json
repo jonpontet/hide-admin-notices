@@ -10,6 +10,6 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "install": "^0.13.0",
-    "npm": "^6.14.9"
+    "npm": "^6.14.6"
   }
 }
