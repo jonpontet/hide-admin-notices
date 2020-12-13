@@ -19,27 +19,31 @@
  */
 class Hide_Admin_Notices_Admin {
 
-	/**
-	 * Register the CSS and JavaScript for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-		wp_enqueue_style( HIDE_ADMIN_NOTICES_NAME,
-			HIDE_ADMIN_NOTICES_BASEURL . 'assets/css/hide-admin-notices.min.css',
-			[], HIDE_ADMIN_NOTICES_VERSION );
-		wp_register_script( HIDE_ADMIN_NOTICES_NAME,
-			HIDE_ADMIN_NOTICES_BASEURL . 'assets/js/hide-admin-notices.min.js',
-			array( 'jquery' ),
-			HIDE_ADMIN_NOTICES_VERSION, true );
-		wp_localize_script( HIDE_ADMIN_NOTICES_NAME,
-			str_replace( '-', '_', HIDE_ADMIN_NOTICES_NAME ) . '_l10n', [
-				'toggleShowText'      => __( 'Show Notices', 'hide-admin-notices' ),
-				'toggleHideText'      => __( 'Hide Notices', 'hide-admin-notices' ),
-				'screenMetaAriaLabel' => __( 'Admin Notices Tab', 'hide-admin-notices' )
-			] );
-		wp_enqueue_script( HIDE_ADMIN_NOTICES_NAME );
-	}
+  /**
+   * Register the CSS and JavaScript for the admin area.
+   *
+   * @since    1.0.0
+   */
+  public function enqueue_scripts() {
+    $minified = '.min';
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
+      $minified = '';
+    }
+    wp_enqueue_style( HIDE_ADMIN_NOTICES_NAME,
+      HIDE_ADMIN_NOTICES_BASEURL . 'assets/css/hide-admin-notices' . $minified . '.css',
+      [], HIDE_ADMIN_NOTICES_VERSION );
+    wp_register_script( HIDE_ADMIN_NOTICES_NAME,
+      HIDE_ADMIN_NOTICES_BASEURL . 'assets/js/hide-admin-notices' . $minified . '.js',
+      array( 'jquery' ),
+      HIDE_ADMIN_NOTICES_VERSION, true );
+    wp_localize_script( HIDE_ADMIN_NOTICES_NAME,
+      str_replace( '-', '_', HIDE_ADMIN_NOTICES_NAME ) . '_l10n', [
+        'toggleShowText'      => __( 'Show Notices', 'hide-admin-notices' ),
+        'toggleHideText'      => __( 'Hide Notices', 'hide-admin-notices' ),
+        'screenMetaAriaLabel' => __( 'Dashboard Notices Tab', 'hide-admin-notices' )
+      ] );
+    wp_enqueue_script( HIDE_ADMIN_NOTICES_NAME );
+  }
 
   /**
    * Modify plugin row meta.

@@ -18,17 +18,21 @@ const files = {
 };
 
 function cssTask() {
-    return src(files.src.css, {sourcemaps: true})
-        .pipe(concat('hide-admin-notices.min.css'))
-        .pipe(postcss([cssnano()]))
-        .pipe(dest(files.dist.css, {sourcemaps: '.'}));
+  return src(files.src.css)
+    .pipe(concat('hide-admin-notices.css'))
+    .pipe(dest(files.dist.css))
+    .pipe(concat('hide-admin-notices.min.css'))
+    .pipe(postcss([cssnano()]))
+    .pipe(dest(files.dist.css));
 }
 
 function jsTask() {
-    return src([files.src.js], {sourcemaps: true})
-        .pipe(concat('hide-admin-notices.min.js'))
-        .pipe(uglify())
-        .pipe(dest(files.dist.js, {sourcemaps: '.'}));
+  return src([files.src.js])
+    .pipe(concat('hide-admin-notices.js'))
+    .pipe(dest(files.dist.js))
+    .pipe(concat('hide-admin-notices.min.js'))
+    .pipe(uglify())
+    .pipe(dest(files.dist.js));
 }
 
 function watchTask() {
@@ -40,5 +44,6 @@ function watchTask() {
         )
     );
 }
-
 exports.default = watchTask;
+exports.css = cssTask;
+exports.js = jsTask;
