@@ -3,7 +3,7 @@ Contributors: etalented
 Donate link: https://www.buymeacoffee.com/theeasyweb
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
-Tested up to: 5.5.3
+Tested up to: 5.6
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
@@ -79,10 +79,13 @@ Great! Please write a message in the [WordPress Support Forum](https://wordpress
 == Changelog ==
 
 = 1.0.3 =
-* Ensure all hidden notices display with panel
-* Not all notices get moved to wrap element
+* Ensure all notices display within panel
+* Look for notices after page load
 * Ignore notices that are not visible
-* Avoid conflicts with WooCommerce plugin
+* WooCommerce support
+* JetPack support
+* Language update
+* WordPress 5.6 support
 
 = 1.0.2 =
 * Language update
