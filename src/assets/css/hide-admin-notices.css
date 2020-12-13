@@ -21,6 +21,11 @@
     color: #32373c;
 }
 
+#hidden-admin-notices-link:focus {
+    border-color: #5b9dd9;
+    box-shadow: 0 0 3px rgba(0,115,170,.8);
+}
+
 #hidden-admin-notices-link:after {
     right: 0;
     content: "\f140";
