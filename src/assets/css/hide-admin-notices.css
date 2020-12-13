@@ -76,21 +76,29 @@
 
 /* Hide all notices after HAN has initialised */
 .hidden-admin-notices-active #wpbody-content > div.update-nag,
-.hidden-admin-notices-active #wpbody-content > div#message,
 .hidden-admin-notices-active #wpbody-content > div.updated,
 .hidden-admin-notices-active #wpbody-content > div.notice,
+.hidden-admin-notices-active #wpbody-content > div.error,
+.hidden-admin-notices-active #wpbody-content > div#message,
 .hidden-admin-notices-active #wpbody-content > .wrap > div.update-nag,
 .hidden-admin-notices-active #wpbody-content > .wrap > div.updated,
 .hidden-admin-notices-active #wpbody-content > .wrap > div.notice,
-.hidden-admin-notices-active #wpbody-content > .wrap > div#message {
+.hidden-admin-notices-active #wpbody-content > .wrap > div.error,
+.hidden-admin-notices-active #wpbody-content > .wrap > div#message,
+.hidden-admin-notices-active #wpbody-content > .wrap > form > div.update-nag,
+.hidden-admin-notices-active #wpbody-content > .wrap > form > div.updated,
+.hidden-admin-notices-active #wpbody-content > .wrap > form > div.notice,
+.hidden-admin-notices-active #wpbody-content > .wrap > form > div.error,
+.hidden-admin-notices-active #wpbody-content > .wrap > form > div#message {
     display: none !important;
 }
 
 /* Show all notices again when they are hidden away in notices panel */
 #wpbody-content > #hidden-admin-notices-panel > div.update-nag,
-#wpbody-content > #hidden-admin-notices-panel > div#message,
 #wpbody-content > #hidden-admin-notices-panel > div.updated,
-#wpbody-content > #hidden-admin-notices-panel > div.notice {
+#wpbody-content > #hidden-admin-notices-panel > div.notice,
+#wpbody-content > #hidden-admin-notices-panel > div.error,
+#wpbody-content > #hidden-admin-notices-panel > div#message {
     /* Ensure all notices display in the panel */
     position: relative!important;
     display: block!important;

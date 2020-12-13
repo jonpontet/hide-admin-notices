@@ -3,8 +3,9 @@
     "use strict";
     ({
         init: function () {
-            this.$allAdminNotices = $('#wpbody-content>div.updated:visible,#wpbody-content>div.notice:visible,' +
-                '#wpbody-content>div.update-nag:visible,#wpbody-content>#message:visible');
+            this.$allAdminNotices = $('#wpbody-content>div.error:visible,#wpbody-content>div.updated:visible,' +
+              '#wpbody-content>div.notice:visible,#wpbody-content>div.update-nag:visible,' +
+              '#wpbody-content>div#message:visible');
 
             // Do not run on WooCommerce pages
             // Or no visible admin notices
@@ -57,9 +58,17 @@
                     clearInterval(interval);
                     return;
                 }
-                $('#wpbody-content>.wrap>div.updated').detach().appendTo($hanPanel).show();
-                $('#wpbody-content>.wrap>div.notice').detach().appendTo($hanPanel).show();
-                $('#wpbody-content>.wrap>#message').detach().appendTo($hanPanel).show();
+                $('#wpbody-content>.wrap>div.error,' +
+                  '#wpbody-content>.wrap>div.updated,' +
+                  '#wpbody-content>.wrap>div.notice,' +
+                  '#wpbody-content>.wrap>div#message' +
+                  '#wpbody-content>.wrap>form>div.error,' +
+                  '#wpbody-content>.wrap>form>div.updated,' +
+                  '#wpbody-content>.wrap>form>div.notice,' +
+                  '#wpbody-content>.wrap>form>div#message')
+                  .detach()
+                  .appendTo($hanPanel)
+                  .show();
             }, 250);
         }
     }).init();
