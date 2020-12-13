@@ -1,7 +1,7 @@
 === Hide Admin Notices ===
 Contributors: etalented
 Donate link: https://www.buymeacoffee.com/theeasyweb
-Tags: admin, tidy, notices, hide admin notices, hide updates nags, hide nags
+Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
 Tested up to: 5.5.3
 Requires PHP: 5.6
@@ -9,29 +9,29 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A lightweight plugin that hides all Notices, Update Nags & Messages in your WordPress Admin allowing you to focus on your content.
+A simple plugin to hide all Notices, Messages, & Update Nags in your WordPress Dashboard for PHP, Plugins, Themes, & WordPress.
 
 == Description ==
 
-Have you become tired of the clutter of Admin Notices that appear at the top of every page in your WordPress Admin?
+Have you become tired of the clutter of Admin Notices that appear at the top of every page in your WordPress Dashboard?
 
 With each new plugin or theme that you install, there seem to be more and more notices that appear at the top of each page!
 
 With this simple plugin, you can claim back all this wasted screen space so that you can focus on what is important - creating your content.
 
-Hide Admin Notices hides away all notices, update nags and messages and makes it easy for you to see them again, when you want.
+Hide Admin Notices hides away all Notices, Messages, and Update Nags, and makes it easy for you to see them again when you want.
 
 #### HOW DOES IT WORK?
 
-After activating this plugin, you will have a new **Show Notices** button at the top right-hand corner of your admin pages (just next to **Screen Options**).
+After activating the plugin, you will have a new **Show Notices** button at the top right-hand corner of your admin pages - just next to **Screen Options**.
 
-Click the button to see all admin notices and just click the button again to hide them.
+Click the button to reveal all hidden notices, and simply click the button again to hide them.
 
-#### THIS IS A NEW PLUGIN
+#### SUPPORT
 
-**Like it?** Please [Rate It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Show Your Appreciation](https://www.buymeacoffee.com/theeasyweb)
+**Like this plugin?** Please [Rate It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Donate a $1](https://www.buymeacoffee.com/theeasyweb)
 
-**Have a problem?** Please put a message in the [Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/)
+**Have a problem?** Please write a message in the [WordPress Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/)
 
 == Translations ==
 
@@ -40,28 +40,28 @@ Click the button to see all admin notices and just click the button again to hid
 
 == Installation ==
 
-1. Press the Add New button on your WordPress Admin Plugins screen
+1. Press the Add New button on your WordPress Dashboard Plugins screen
 1. Search for "Hide Admin Notices"
 1. Press Install Now and then Activate
-1. The plugin will now be working. I hope it helps you!
+1. The plugin will work straight away; there is nothing more to do!
 
 == Frequently Asked Questions ==
 
 = What does this plugin do? =
 
-It hides away the clutter of admin notices that appear at the top of each screen in the WordPress Admin.
+It hides away all WordPress Dashboard Notices, Messages, and Update Nags that appear at the top of each screen.
 
-You can see these notices at anytime simply by clicking on the **Show Notices** button in the top right-hand corner.
+You can see these notices at anytime simply by clicking the **Show Notices** button in the top right-hand corner.
 
-To hide the notices again, click on **Hide Notices**.
+To hide all notices again, just click on **Hide Notices**.
 
-= How do I see the hidden admin notices? =
+= How do I see the hidden Dashboard notices? =
 
-Simply click on the **Show Notices** button in the top right-hand corner on the screen.
+Simply click the **Show Notices** button in the top right-hand corner on the screen.
 
-= How do I hide the admin notices? =
+= How do I hide the Dashboard notices? =
 
-Simply click **Hide Notices** button in the top right-hand corner on the screen.
+Simply click the **Hide Notices** button in the top right-hand corner on the screen.
 
 = What configuration is there with this plugin? =
 
@@ -69,7 +69,7 @@ None. Simply install, activate and enjoy!
 
 = There is a feature I want! =
 
-Great! Please put a message in the [Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/).
+Great! Please write a message in the [WordPress Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/).
 
 == Screenshots ==
 
