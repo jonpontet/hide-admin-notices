@@ -103,3 +103,15 @@
     position: relative!important;
     display: block!important;
 }
+
+/* WooCommerce support */
+.woocommerce-embed-page #hidden-admin-notices-link-wrap,
+.woocommerce-embed-page #hidden-admin-notices-panel {
+    position: relative;
+    top: 56px;
+}
+
+.woocommerce-page #hidden-admin-notices-link {
+    margin-top: -1px;
+}
+}

@@ -7,9 +7,9 @@
               '#wpbody-content>div.notice:visible,#wpbody-content>div.update-nag:visible,' +
               '#wpbody-content>div#message:visible');
 
-            // Do not run on WooCommerce pages
-            // Or no visible admin notices
-            if ($('body').hasClass('woocommerce-page') ||
+            // Always run for WooCommerce pages
+            // Or do not run if no applicable notices
+            if (!$('body').hasClass('woocommerce-embed-page') &&
               !this.$allAdminNotices.length) {
                 return;
             }
