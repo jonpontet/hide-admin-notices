@@ -114,4 +114,9 @@
 .woocommerce-page #hidden-admin-notices-link {
     margin-top: -1px;
 }
+
+/* JetPack support */
+.jetpack-pagestyles #hidden-admin-notices-link-wrap {
+    position: relative;
+    z-index: 10;
 }
