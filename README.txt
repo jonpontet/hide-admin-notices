@@ -29,7 +29,7 @@ Click the button to see all admin notices and just click the button again to hid
 
 #### THIS IS A NEW PLUGIN
 
-**Like it?** Please [Rate It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Buy me a Coffee](https://www.buymeacoffee.com/theeasyweb)
+**Like it?** Please [Rate It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Show Your Appreciation](https://www.buymeacoffee.com/theeasyweb)
 
 **Have a problem?** Please put a message in the [Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/)
 
@@ -77,6 +77,12 @@ Great! Please put a message in the [Support Forum](https://wordpress.org/support
 2. Activate this plugin and you will tidy-up the mess!
 
 == Changelog ==
+
+= 1.0.3 =
+* Ensure all hidden notices display with panel
+* Not all notices get moved to wrap element
+* Ignore notices that are not visible
+* Avoid conflicts with WooCommerce plugin
 
 = 1.0.2 =
 * Language update
