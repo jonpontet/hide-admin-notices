@@ -3,9 +3,14 @@
     "use strict";
     ({
         init: function () {
-            this.$allAdminNotices = $('#wpbody-content>div.error:visible,#wpbody-content>div.updated:visible,' +
-              '#wpbody-content>div.notice:visible,#wpbody-content>div.update-nag:visible,' +
-              '#wpbody-content>div#message:visible');
+            this.$allAdminNotices =
+              this.$allAdminNotices = $('#wpbody-content>div.error:visible,' +
+                '#wpbody-content>div.updated:visible,' +
+                '#wpbody-content>div.notice:visible,' +
+                '#wpbody-content>div.update-nag:visible,' +
+                '#wpbody-content>div#message:visible,' +
+                '#wpbody-content>div#wpse1_2023_complete' // WP Clone
+              );
 
             // Always run for WooCommerce pages
             // Or do not run if no applicable notices
