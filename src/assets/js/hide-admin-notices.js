@@ -10,7 +10,8 @@
                 '#wpbody-content>div.update-nag:visible,' +
                 '#wpbody-content>div#message:visible,' +
                 '#wpbody-content>div#wpse1_2023_complete,' + // WP Clone
-                '#wpbody-content>div.ctf_notice' // Custom Twitter Feeds
+                '#wpbody-content>div.ctf_notice,' + // Custom Twitter Feeds
+                '#wpbody-content>div.wpstg_fivestar' // WP Stage
               );
 
             // Always run for WooCommerce pages
