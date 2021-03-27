@@ -120,3 +120,18 @@
     position: relative;
     z-index: 10;
 }
+
+/* Formidable forms support */
+.frm-white-body #hidden-admin-notices-link {
+    position: absolute;
+    right: calc(166px + 142px);
+    box-shadow: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.frm-full-screen #hidden-admin-notices-link,
+.post-new-php.post-type-frm_display #hidden-admin-notices-link,
+.post-php.post-type-frm_display #hidden-admin-notices-link {
+    display: none;
+}
