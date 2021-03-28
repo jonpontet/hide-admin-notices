@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hide Admin Notices\n"
-"POT-Creation-Date: 2020-12-13 09:40+0100\n"
-"PO-Revision-Date: 2020-12-13 09:48+0100\n"
+"POT-Creation-Date: 2021-03-28 15:59+0200\n"
+"PO-Revision-Date: 2021-03-28 16:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,34 +16,34 @@ msgstr ""
 "X-Poedit-WPHeader: hide-admin-notices.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: includes\n"
 "X-Poedit-SearchPathExcluded-0: src\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 "X-Poedit-SearchPathExcluded-2: languages\n"
 
-#: includes/class-hide-admin-notices-admin.php:37
+#: includes/class-hide-admin-notices-admin.php:51
+#: includes/class-hide-admin-notices-admin.php:69
+msgid "Leave a rating"
+msgstr "Ajouter mon avis"
+
+#: includes/class-hide-admin-notices-admin.php:52
+msgid "Leave a rating »"
+msgstr "Ajouter mon avis »"
+
+#: includes/class-hide-admin-notices-admin.php:73
 msgid "Show Notices"
-msgstr "Montrer les Notifications"
+msgstr "Montrer les notifications"
 
-#: includes/class-hide-admin-notices-admin.php:38
+#: includes/class-hide-admin-notices-admin.php:74
 msgid "Hide Notices"
-msgstr "Cacher les Notifications"
-
-#: includes/class-hide-admin-notices-admin.php:39
-msgid "Dashboard Notices Tab"
-msgstr "Onglet notifications d’administrateur"
-
-#: includes/class-hide-admin-notices-admin.php:53
-#: includes/class-hide-admin-notices-admin.php:54
-msgid "Donate a $1"
-msgstr "Faites un don de 1 €"
+msgstr "Cacher les notifications"
 
 #. Plugin Name of the plugin/theme
 msgid "Hide Admin Notices"
-msgstr "Cacher les notifications du tableau de bord"
+msgstr "Cacher les notifications du dashboard"
 
 #. Plugin URI of the plugin/theme
 msgid "https://theeasyweb.co/hide-admin-notices"
@@ -51,11 +51,11 @@ msgstr "https://theeasyweb.co/hide-admin-notices"
 
 #. Description of the plugin/theme
 msgid ""
-"A simple plugin to hide all Notices, Messages, & Update Nags in your "
-"WordPress Dashboard for PHP, Plugins, Themes, & WordPress."
+"Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... "
+"for everything!"
 msgstr ""
-"Un simple plugin pour masquer tous les notifications dans votre tableau de "
-"bord WordPress pour PHP, extensions, thèmes et WordPress."
+"Cacher – ou montrer – les notifications, les messages, les « nags » de mise "
+"à jour ... toutes dans le dashboard WordPress !"
 
 #. Author of the plugin/theme
 msgid "The Easy Web Co."
@@ -64,6 +64,19 @@ msgstr "The Easy Web Co."
 #. Author URI of the plugin/theme
 msgid "https://theeasyweb.co"
 msgstr "https://theeasyweb.co"
+
+#~ msgid "Dashboard Notices Tab"
+#~ msgstr "Onglet notifications d’administrateur"
+
+#~ msgid "Donate a $1"
+#~ msgstr "Faites un don de 1 €"
+
+#~ msgid ""
+#~ "A simple plugin to hide all Notices, Messages, & Update Nags in your "
+#~ "WordPress Dashboard for PHP, Plugins, Themes, & WordPress."
+#~ msgstr ""
+#~ "Un simple plugin pour masquer tous les notifications dans votre tableau "
+#~ "de bord WordPress pour PHP, extensions, thèmes et WordPress."
 
 #~ msgid "Buy Me a Coffee"
 #~ msgstr "Achetez-moi un café"

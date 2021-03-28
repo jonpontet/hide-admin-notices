@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hide Admin Notices\n"
-"POT-Creation-Date: 2020-12-13 09:48+0100\n"
+"POT-Creation-Date: 2021-03-28 15:59+0200\n"
 "PO-Revision-Date: 2020-03-28 23:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,21 +24,21 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: assets\n"
 "X-Poedit-SearchPathExcluded-2: languages\n"
 
-#: includes/class-hide-admin-notices-admin.php:37
+#: includes/class-hide-admin-notices-admin.php:51
+#: includes/class-hide-admin-notices-admin.php:69
+msgid "Leave a rating"
+msgstr ""
+
+#: includes/class-hide-admin-notices-admin.php:52
+msgid "Leave a rating »"
+msgstr ""
+
+#: includes/class-hide-admin-notices-admin.php:73
 msgid "Show Notices"
 msgstr ""
 
-#: includes/class-hide-admin-notices-admin.php:38
+#: includes/class-hide-admin-notices-admin.php:74
 msgid "Hide Notices"
-msgstr ""
-
-#: includes/class-hide-admin-notices-admin.php:39
-msgid "Dashboard Notices Tab"
-msgstr ""
-
-#: includes/class-hide-admin-notices-admin.php:53
-#: includes/class-hide-admin-notices-admin.php:54
-msgid "Donate a $1"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -51,8 +51,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A simple plugin to hide all Notices, Messages, & Update Nags in your "
-"WordPress Dashboard for PHP, Plugins, Themes, & WordPress."
+"Hide – or show – WordPress Dashboard Notices, Messages, Update Nags "
+"etc. ... for everything!"
 msgstr ""
 
 #. Author of the plugin/theme
