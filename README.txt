@@ -3,7 +3,7 @@ Contributors: etalented
 Donate link: https://www.buymeacoffee.com/theeasyweb
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
