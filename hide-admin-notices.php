@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name:       Hide Admin Notices
  * Plugin URI:        https://theeasyweb.co/hide-admin-notices
- * Description:       A simple plugin to hide all Notices, Messages, & Update Nags in your WordPress Dashboard for PHP, Plugins, Themes, & WordPress.
+ * Description:       Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... for everything!
  * Version:           1.0.3
  * Author:            The Easy Web Co.
  * Author URI:        https://theeasyweb.co
