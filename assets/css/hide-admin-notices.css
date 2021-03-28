@@ -1,6 +1,11 @@
 #hidden-admin-notices-link-wrap {
+    display: none;
     float: right;
     margin: 0 0 0 6px;
+}
+
+.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
+    display: block;
 }
 
 #hidden-admin-notices-link {
@@ -119,4 +124,19 @@
 .jetpack-pagestyles #hidden-admin-notices-link-wrap {
     position: relative;
     z-index: 10;
+}
+
+/* Formidable forms support */
+.frm-white-body #hidden-admin-notices-link {
+    position: absolute;
+    right: calc(166px + 142px);
+    box-shadow: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.frm-full-screen #hidden-admin-notices-link,
+.post-new-php.post-type-frm_display #hidden-admin-notices-link,
+.post-php.post-type-frm_display #hidden-admin-notices-link {
+    display: none;
 }

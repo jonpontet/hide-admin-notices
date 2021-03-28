@@ -106,6 +106,7 @@ class Hide_Admin_Notices {
 		$plugin_admin = new Hide_Admin_Notices_Admin();
 		$this->loader->add_action( 'plugin_row_meta', $plugin_admin, 'plugin_row_meta', 20, 2 );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 1 );
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices', 1 );
 	}
 
 	/**

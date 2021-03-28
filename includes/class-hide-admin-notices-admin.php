@@ -36,12 +36,6 @@ class Hide_Admin_Notices_Admin {
       HIDE_ADMIN_NOTICES_BASEURL . 'assets/js/hide-admin-notices' . $minified . '.js',
       array( 'jquery' ),
       HIDE_ADMIN_NOTICES_VERSION, true );
-    wp_localize_script( HIDE_ADMIN_NOTICES_NAME,
-      str_replace( '-', '_', HIDE_ADMIN_NOTICES_NAME ) . '_l10n', [
-        'toggleShowText'      => __( 'Show Notices', 'hide-admin-notices' ),
-        'toggleHideText'      => __( 'Hide Notices', 'hide-admin-notices' ),
-        'screenMetaAriaLabel' => __( 'Dashboard Notices Tab', 'hide-admin-notices' )
-      ] );
     wp_enqueue_script( HIDE_ADMIN_NOTICES_NAME );
   }
 
@@ -62,4 +56,21 @@ class Hide_Admin_Notices_Admin {
 
 		return (array) $links;
 	}
+  /**
+   * Plugin placeholder elements.
+   *
+   * @return string
+   */
+  public function admin_notices() {
+    ?>
+    <div id="hidden-admin-notices-panel" class="hidden" tabindex="-1"
+         aria-label="<?php echo esc_attr__( 'Leave a rating', 'hide-admin-notices' ); ?> "></div>
+    <div id="hidden-admin-notices-link-wrap" class="hide-if-no-js">
+      <button type="button" id="hidden-admin-notices-link"
+              class="button" aria-controls="hidden-admin-notices-panel" aria-expanded="false">
+        <span><?php echo esc_html__( 'Show Notices', 'hide-admin-notices' ); ?></span>
+        <span><?php echo esc_html__( 'Hide Notices', 'hide-admin-notices' ); ?></span></button>
+    </div>
+    <?php
+  }
 }

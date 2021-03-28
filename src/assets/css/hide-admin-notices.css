@@ -1,6 +1,11 @@
 #hidden-admin-notices-link-wrap {
+    display: none;
     float: right;
     margin: 0 0 0 6px;
+}
+
+.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
+    display: block;
 }
 
 #hidden-admin-notices-link {
