@@ -47,15 +47,17 @@ class Hide_Admin_Notices_Admin {
   public function plugin_row_meta( $links, $file ) {
     if ( HIDE_ADMIN_NOTICES_BASENAME === $file ) {
       $row_meta = array(
-        'donate' => '<a target="_blank" href="' . esc_url( HIDE_ADMIN_NOTICES_DONATE_LINK ) .
-                    '" aria-label="' . esc_attr__( 'Donate a $1', 'hide-admin-notices' ) .
-                    '">' . esc_html__( 'Donate a $1', 'hide-admin-notices' ) . '</a>',
+        'donate' => '<a target="_blank" href="' . esc_url( HIDE_ADMIN_NOTICES_RATE_LINK ) .
+                    '" aria-label="' . esc_attr__( 'Leave a rating', 'hide-admin-notices' ) .
+                    '">' . esc_html__( 'Leave a rating »', 'hide-admin-notices' ) . '</a>',
+      );
 
-			return array_merge( $links, $row_meta );
-		}
+      return array_merge( $links, $row_meta );
+    }
 
-		return (array) $links;
-	}
+    return (array) $links;
+  }
+
   /**
    * Plugin placeholder elements.
    *

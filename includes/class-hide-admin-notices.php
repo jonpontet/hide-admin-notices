@@ -69,6 +69,7 @@ class Hide_Admin_Notices {
 		define( 'HIDE_ADMIN_NOTICES_VERSION', $this->version );
 		define( 'HIDE_ADMIN_NOTICES_NAME', $this->plugin_name );
 		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/theeasyweb' );
+		define( 'HIDE_ADMIN_NOTICES_RATE_LINK', 'https://wordpress.org/support/plugin/hide-admin-notices/reviews/#new-post' );
 	}
 
 	/**
