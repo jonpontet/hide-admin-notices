@@ -78,6 +78,16 @@ Great! Please write a message in the [WordPress Support Forum](https://wordpress
 
 == Changelog ==
 
+= 1.1.0 =
+* WP 5.7 compatibility
+* Formidable forms compatibility
+* Custom twitter feeds compatibility
+* WP Clone compatibility
+* WP Staging compatibility
+* Text update
+* FR translation update
+* Speed enhancement
+
 = 1.0.3 =
 * Ensure all notices display within panel
 * Look for notices after page load
