@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple plugin to hide all Notices, Messages, & Update Nags in your WordPress Dashboard for PHP, Plugins, Themes, & WordPress.
+Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... for everything!
 
 == Description ==
 
