@@ -1,11 +1,11 @@
 === Hide Admin Notices ===
 Contributors: etalented
-Donate link: https://www.buymeacoffee.com/theeasyweb
+Donate link: https://www.buymeacoffee.com/pontetlabs
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,12 +82,14 @@ Great! Please write a message in the [WordPress Support Forum](https://wordpress
 
 == Changelog ==
 
+= 1.2.1 =
+* Donate link update
+
 = 1.2.0 =
 * New PontetLabs brand
 * WP 5.9 compatibility
 * Translations for Russian, German, Japanese, Spanish & Italian
 * Mobile support
-* SCSS for CSS
 
 = 1.1.0 =
 * WP 5.7 compatibility
