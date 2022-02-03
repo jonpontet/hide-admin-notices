@@ -23,14 +23,18 @@ When you click the button, all the Admin Notices will slide down into view. Clic
 
 ### THIS IS A NEW PLUGIN
 
-**Like it?** Please consider [Rating It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Buying me a Coffee](https://www.buymeacoffee.com/jonpontet)!
+**Like it?** Please consider [Rating It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Buying me a Coffee](https://www.buymeacoffee.com/pontetlabs)!
 
 **Have a problem?** Please [Create an Issue](https://github.com/jonpontet/hide-admin-notices/issues/new/choose) here on GitHub. 
 
 ## Translations
 
 * English
-* French
+* Russian
+* German
+* Japanese
+* Italian
+* Spanish
 
 ## Installation
 
@@ -75,7 +79,15 @@ Alternatively, please [Create an Issue](https://github.com/jonpontet/hide-admin-
 
 ## Changelog
 
+### 1.2.0
+* New PontetLabs brand
+* WP 5.9 compatibility
+* Translations for Russian, German, Japanese, Spanish & Italian
+* Mobile support
+* SCSS for CSS
+
 ### 1.0
 * Initial release
 
 ## Upgrade Notice
+* No special instructions

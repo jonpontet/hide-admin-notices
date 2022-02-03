@@ -10,7 +10,9 @@
       '#wpbody-content>div.ctf_notice,' + // Custom Twitter Feeds
       '#wpbody-content>div.wpstg_fivestar' // WP Stage
     ), $hanPanel = $('#hidden-admin-notices-panel'),
-    $hanToggleButton = $('#hidden-admin-notices-link');
+    $hanToggleButton = $('#hidden-admin-notices-link'),
+    $hanToggleButtonWrap = $('#hidden-admin-notices-link-wrap'),
+    $screenMetaLinks = $('#screen-meta-links');
 
   // Always run for WooCommerce pages
   // Or do not run if no applicable notices
@@ -25,13 +27,18 @@
   // Start by moving standard notices
   $allAdminNotices.detach().appendTo($hanPanel).show();
 
+  // Copy WP default screen meta links to conserve toggle button placement when expanded
+  $screenMetaLinks.clone().appendTo($hanToggleButtonWrap);
+
   $hanToggleButton.on('click', function () {
     if ($hanPanel.is(':visible')) {
       $hanPanel.slideUp('fast', function () {
+        $body.removeClass('hidden-admin-notices-panel-active');
         $hanToggleButton.removeClass('hidden-admin-notices-panel-active')
           .attr('aria-expanded', false);
       });
     } else {
+      $body.addClass('hidden-admin-notices-panel-active');
       $hanPanel.slideDown('fast', function () {
         this.focus();
         $hanToggleButton.addClass('hidden-admin-notices-panel-active')

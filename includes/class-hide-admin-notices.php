@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @link       https://theeasyweb.co
+ * @link       https://pontetlabs.com
  * @since      1.0.0
  *
  * @package    Hide_Admin_Notices
@@ -12,7 +12,7 @@
  * @since      1.0.0
  * @package    Hide_Admin_Notices
  * @subpackage Hide_Admin_Notices/includes
- * @author     The Easy Web Co. <hello@theeasyweb.co>
+ * @author     PontetLabs <hi@pontetlabs.com>
  */
 class Hide_Admin_Notices {
 
@@ -42,7 +42,7 @@ class Hide_Admin_Notices {
 	 * @access   protected
 	 * @var      string $version The current version of the plugin.
 	 */
-	public $version = '1.0.3';
+	public $version = '1.2.0';
 
 	/**
 	 * Initialize the class.
@@ -68,7 +68,7 @@ class Hide_Admin_Notices {
 		define( 'HIDE_ADMIN_NOTICES_BASEURL', plugin_dir_url( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) );
 		define( 'HIDE_ADMIN_NOTICES_VERSION', $this->version );
 		define( 'HIDE_ADMIN_NOTICES_NAME', $this->plugin_name );
-		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/theeasyweb' );
+		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/pontetlabs' );
 		define( 'HIDE_ADMIN_NOTICES_RATE_LINK', 'https://wordpress.org/support/plugin/hide-admin-notices/reviews/#new-post' );
 	}
 
@@ -108,6 +108,7 @@ class Hide_Admin_Notices {
 		$this->loader->add_action( 'plugin_row_meta', $plugin_admin, 'plugin_row_meta', 20, 2 );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 1 );
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices', 1 );
+		$this->loader->add_filter( 'plugin_action_links_' . HIDE_ADMIN_NOTICES_BASENAME, $plugin_admin, 'plugin_action_links' );
 	}
 
 	/**

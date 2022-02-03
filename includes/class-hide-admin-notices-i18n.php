@@ -3,7 +3,7 @@
 /**
  * Define the internationalization functionality
  *
- * @link       https://theeasyweb.co
+ * @link       https://pontetlabs.com
  * @since      1.0.0
  *
  * @package    Hide_Admin_Notices
@@ -16,7 +16,7 @@
  * @since      1.0.0
  * @package    Hide_Admin_Notices
  * @subpackage Hide_Admin_Notices/includes
- * @author     The Easy Web Co. <hello@theeasyweb.co>
+ * @author     PontetLabs <hi@pontetlabs.com>
  */
 class Hide_Admin_Notices_i18n {
 

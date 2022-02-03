@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hide Admin Notices\n"
-"POT-Creation-Date: 2021-03-28 15:59+0200\n"
-"PO-Revision-Date: 2021-03-28 16:30+0200\n"
+"POT-Creation-Date: 2022-01-31 15:26+0100\n"
+"PO-Revision-Date: 2022-01-31 15:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: hide-admin-notices.php\n"
@@ -25,19 +25,24 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 
 #: includes/class-hide-admin-notices-admin.php:51
-#: includes/class-hide-admin-notices-admin.php:69
-msgid "Leave a rating"
-msgstr "Ajouter mon avis"
-
 #: includes/class-hide-admin-notices-admin.php:52
-msgid "Leave a rating »"
-msgstr "Ajouter mon avis »"
+msgid "Donate a $1"
+msgstr "Faites un don de 1 €"
 
 #: includes/class-hide-admin-notices-admin.php:73
+#: includes/class-hide-admin-notices-admin.php:74
+msgid "Like it?"
+msgstr "Vous l’aimez?"
+
+#: includes/class-hide-admin-notices-admin.php:88
+msgid "Notifications Tab"
+msgstr "Onglet notifications d’administrateur"
+
+#: includes/class-hide-admin-notices-admin.php:92
 msgid "Show Notices"
 msgstr "Montrer les notifications"
 
-#: includes/class-hide-admin-notices-admin.php:74
+#: includes/class-hide-admin-notices-admin.php:93
 msgid "Hide Notices"
 msgstr "Cacher les notifications"
 
@@ -46,8 +51,8 @@ msgid "Hide Admin Notices"
 msgstr "Cacher les notifications du dashboard"
 
 #. Plugin URI of the plugin/theme
-msgid "https://theeasyweb.co/hide-admin-notices"
-msgstr "https://theeasyweb.co/hide-admin-notices"
+msgid "https://pontetlabs.com/hide-admin-notices"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -58,18 +63,24 @@ msgstr ""
 "à jour ... toutes dans le dashboard WordPress !"
 
 #. Author of the plugin/theme
-msgid "The Easy Web Co."
-msgstr "The Easy Web Co."
+msgid "PontetLabs"
+msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://theeasyweb.co"
-msgstr "https://theeasyweb.co"
+msgid "https://pontetlabs.com"
+msgstr ""
+
+#~ msgid "Leave a rating"
+#~ msgstr "Ajouter mon avis"
+
+#~ msgid "The Easy Web Co."
+#~ msgstr "The Easy Web Co."
+
+#~ msgid "Leave a rating »"
+#~ msgstr "Ajouter mon avis »"
 
 #~ msgid "Dashboard Notices Tab"
 #~ msgstr "Onglet notifications d’administrateur"
-
-#~ msgid "Donate a $1"
-#~ msgstr "Faites un don de 1 €"
 
 #~ msgid ""
 #~ "A simple plugin to hide all Notices, Messages, & Update Nags in your "
