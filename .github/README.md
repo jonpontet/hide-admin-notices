@@ -23,7 +23,7 @@ When you click the button, all the Admin Notices will slide down into view. Clic
 
 ### SUPPORT
 
-**Like it?** Please consider [Rating It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Donate a $1](https://www.buymeacoffee.com/pontetlabs)!
+**Like this plugin?** Please [Rate It 👍](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Donate a $1 💵](https://www.buymeacoffee.com/pontetlabs)
 
 **Have a problem?** Please [Create an Issue](https://github.com/jonpontet/hide-admin-notices/issues/new/choose) here on GitHub. 
 
