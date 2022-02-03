@@ -21,11 +21,12 @@ If there are no Admin Notices hidden for the current page, the "Show Notices" bu
 
 When you click the button, all the Admin Notices will slide down into view. Click the button a second time, and the notices will slide out of view.
 
-### THIS IS A NEW PLUGIN
+### SUPPORT
 
-**Like it?** Please consider [Rating It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Buying me a Coffee](https://www.buymeacoffee.com/pontetlabs)!
+**Like it?** Please consider [Rating It](https://wordpress.org/support/plugin/hide-admin-notices/reviews/?filter=5) or [Donate a $1](https://www.buymeacoffee.com/pontetlabs)!
 
 **Have a problem?** Please [Create an Issue](https://github.com/jonpontet/hide-admin-notices/issues/new/choose) here on GitHub. 
+
 
 ## Translations
 
@@ -38,9 +39,14 @@ When you click the button, all the Admin Notices will slide down into view. Clic
 
 ## Installation
 
+You can always find the latest version in the WordPres Plugins directory: search for "hide admin notices".
+
+Or, manually:
 1. Dowload the latest version from [Releases](https://github.com/jonpontet/hide-admin-notices/releases)
-2. Upload to your WordPress installation and then Activate
-4. The plugin will now be working. I hope you enjoy!
+2. Extract and rename to "hide-admin-notices"
+3. Upload to your WordPress "plugins" folder
+4. Activate on the WP Admin Plugins page
+5. The plugin should now be working; I hope you enjoy!
 
 ## Frequently Asked Questions
 
@@ -78,6 +84,9 @@ Alternatively, please [Create an Issue](https://github.com/jonpontet/hide-admin-
 ![Activate this plugin and you will tidy-up the mess!](https://github.com/jonpontet/hide-admin-notices/blob/master/.github/screenshot-2.png)
 
 ## Changelog
+
+### 1.2.1
+* Donate link update
 
 ### 1.2.0
 * New PontetLabs brand
