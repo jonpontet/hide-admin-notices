@@ -5,7 +5,7 @@ Tags: hide dashboard notifications, hide dashboard notices, hide admin notificat
 Requires at least: 4.9
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,9 @@ Great! Please write a message in the [WordPress Support Forum](https://wordpress
 2. Activate this plugin and you will tidy-up the mess!
 
 == Changelog ==
+
+= 1.2.2 =
+* Excluding WP default update notices
 
 = 1.2.1 =
 * Donate link update

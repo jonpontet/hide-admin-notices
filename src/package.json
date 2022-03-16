@@ -1,6 +1,6 @@
 {
   "name": "hide-admin-notices",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "dependencies": {
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",

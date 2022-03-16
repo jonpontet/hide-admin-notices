@@ -8,7 +8,7 @@
  * Plugin Name:       Hide Admin Notices
  * Plugin URI:        https://pontetlabs.com/hide-admin-notices
  * Description:       Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... for everything!
- * Version:           1.2.1
+ * Version:           1.2.2
  * Author:            PontetLabs
  * Author URI:        https://pontetlabs.com
  * License:           GPL-2.0+

@@ -2,10 +2,10 @@
 (function ($) {
   var $body = $('body'),
     $allAdminNotices = $('#wpbody-content>div.error:visible,' +
-      '#wpbody-content>div.updated:visible,' +
-      '#wpbody-content>div.notice:visible,' +
+      '#wpbody-content>div.updated:not(.notice):visible,' +
+      '#wpbody-content>div.notice:not(.updated):visible,' +
       '#wpbody-content>div.update-nag:visible,' +
-      '#wpbody-content>div#message:visible,' +
+      '#wpbody-content>div#message:not(.notice):not(.updated):visible,' +
       '#wpbody-content>div#wpse1_2023_complete,' + // WP Clone
       '#wpbody-content>div.ctf_notice,' + // Custom Twitter Feeds
       '#wpbody-content>div.wpstg_fivestar' // WP Stage
@@ -58,13 +58,13 @@
           return;
         }
         $('#wpbody-content>.wrap>div.error,' +
-          '#wpbody-content>.wrap>div.updated,' +
-          '#wpbody-content>.wrap>div.notice,' +
-          '#wpbody-content>.wrap>div#message' +
+          '#wpbody-content>.wrap>div.updated:not(.notice),' +
+          '#wpbody-content>.wrap>div.notice:not(.updated),' +
+          '#wpbody-content>.wrap>div#message:not(.notice):not(.updated)' +
           '#wpbody-content>.wrap>form>div.error,' +
-          '#wpbody-content>.wrap>form>div.updated,' +
-          '#wpbody-content>.wrap>form>div.notice,' +
-          '#wpbody-content>.wrap>form>div#message')
+          '#wpbody-content>.wrap>form>div.updated:not(.notice),' +
+          '#wpbody-content>.wrap>form>div.notice:not(.updated),' +
+          '#wpbody-content>.wrap>form>div#message:not(.notice):not(.updated)')
           .detach()
           .appendTo($hanPanel)
           .show();

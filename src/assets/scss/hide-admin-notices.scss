@@ -150,20 +150,20 @@ body {
     /* Hide all notices after HAN has initialised */
     #wpbody-content {
       > div.update-nag,
-      div.updated,
-      div.notice,
+      div.updated:not(.notice),
+      div.notice:not(.updated),
       div.error,
-      div#message,
+      div#message:not(.notice):not(.updated),
       .wrap > div.update-nag,
-      .wrap > div.updated,
-      .wrap > div.notice,
+      .wrap > div.updated:not(.notice),
+      .wrap > div.notice:not(.updated),
       .wrap > div.error,
-      .wrap > div#message,
+      .wrap > div#message:not(.notice):not(.updated),
       .wrap > form > div.update-nag,
-      .wrap > form > div.updated,
-      .wrap > form > div.notice,
+      .wrap > form > div.updated:not(.notice),
+      .wrap > form > div.notice:not(.updated),
       .wrap > form > div.error,
-      .wrap > form > div#message {
+      .wrap > form > div#message:not(.notice):not(.updated) {
         display: none !important;
       }
     }

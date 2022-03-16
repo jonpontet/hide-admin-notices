@@ -42,7 +42,7 @@ class Hide_Admin_Notices {
 	 * @access   protected
 	 * @var      string $version The current version of the plugin.
 	 */
-	public $version = '1.2.0';
+	public $version = '1.2.2';
 
 	/**
 	 * Initialize the class.

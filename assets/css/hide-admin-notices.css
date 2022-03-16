@@ -122,20 +122,20 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
   display: block;
 }
 body.hidden-admin-notices-active #wpbody-content > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content div.updated,
-body.hidden-admin-notices-active #wpbody-content div.notice,
+body.hidden-admin-notices-active #wpbody-content div.updated:not(.notice),
+body.hidden-admin-notices-active #wpbody-content div.notice:not(.updated),
 body.hidden-admin-notices-active #wpbody-content div.error,
-body.hidden-admin-notices-active #wpbody-content div#message,
+body.hidden-admin-notices-active #wpbody-content div#message:not(.notice):not(.updated),
 body.hidden-admin-notices-active #wpbody-content .wrap > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content .wrap > div.updated,
-body.hidden-admin-notices-active #wpbody-content .wrap > div.notice,
+body.hidden-admin-notices-active #wpbody-content .wrap > div.updated:not(.notice),
+body.hidden-admin-notices-active #wpbody-content .wrap > div.notice:not(.updated),
 body.hidden-admin-notices-active #wpbody-content .wrap > div.error,
-body.hidden-admin-notices-active #wpbody-content .wrap > div#message,
+body.hidden-admin-notices-active #wpbody-content .wrap > div#message:not(.notice):not(.updated),
 body.hidden-admin-notices-active #wpbody-content .wrap > form > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.updated,
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.notice,
+body.hidden-admin-notices-active #wpbody-content .wrap > form > div.updated:not(.notice),
+body.hidden-admin-notices-active #wpbody-content .wrap > form > div.notice:not(.updated),
 body.hidden-admin-notices-active #wpbody-content .wrap > form > div.error,
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div#message {
+body.hidden-admin-notices-active #wpbody-content .wrap > form > div#message:not(.notice):not(.updated) {
   display: none !important;
 }
 body.hidden-admin-notices-panel-active {
