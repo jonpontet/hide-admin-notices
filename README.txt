@@ -1,5 +1,5 @@
 === Hide Admin Notices ===
-Contributors: etalented
+Contributors: pontetlabs
 Donate link: https://www.buymeacoffee.com/pontetlabs
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
