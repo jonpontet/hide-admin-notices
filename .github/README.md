@@ -39,14 +39,7 @@ When you click the button, all the Admin Notices will slide down into view. Clic
 
 ## Installation
 
-You can always find the latest version in the WordPres Plugins directory: search for "hide admin notices".
-
-Or, manually:
-1. Dowload the latest version from [Releases](https://github.com/jonpontet/hide-admin-notices/releases)
-2. Extract and rename to "hide-admin-notices"
-3. Upload to your WordPress "plugins" folder
-4. Activate on the WP Admin Plugins page
-5. The plugin should now be working; I hope you enjoy!
+You can always find the latest version in the WordPres Plugins directory via the WP Admin: search for "hide admin notices".
 
 ## Frequently Asked Questions
 
