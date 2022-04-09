@@ -98,45 +98,45 @@
 }
 
 /* Show all notices when they have moved to the notices panel */
-#wpbody-content > #hidden-admin-notices-panel > div.update-nag,
-#wpbody-content > #hidden-admin-notices-panel > div.updated,
-#wpbody-content > #hidden-admin-notices-panel > div.notice,
-#wpbody-content > #hidden-admin-notices-panel > div.error,
-#wpbody-content > #hidden-admin-notices-panel > div#message {
+#wpbody-content > #hidden-admin-notices-panel > * {
   position: relative !important;
   display: block !important;
 }
 
-/**
- * Body states
- */
 body {
-  /* When HAN is in use */
+  /* Hide all notices on initial page load */
+  /* Hide all notices after being moved to .wrap */
   /* When panel is open */
 }
-body.hidden-admin-notices-active {
-  /* Show links */
-  /* Hide all notices after HAN has initialised */
-}
-body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
-  display: block;
-}
-body.hidden-admin-notices-active #wpbody-content > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content div.updated:not(.notice),
-body.hidden-admin-notices-active #wpbody-content div.notice:not(.updated),
-body.hidden-admin-notices-active #wpbody-content div.error,
-body.hidden-admin-notices-active #wpbody-content div#message:not(.notice):not(.updated),
-body.hidden-admin-notices-active #wpbody-content .wrap > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content .wrap > div.updated:not(.notice),
-body.hidden-admin-notices-active #wpbody-content .wrap > div.notice:not(.updated),
-body.hidden-admin-notices-active #wpbody-content .wrap > div.error,
-body.hidden-admin-notices-active #wpbody-content .wrap > div#message:not(.notice):not(.updated),
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.update-nag,
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.updated:not(.notice),
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.notice:not(.updated),
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div.error,
-body.hidden-admin-notices-active #wpbody-content .wrap > form > div#message:not(.notice):not(.updated) {
+body #wpbody-content > div.error,
+body #wpbody-content > div.updated:not(.notice),
+body #wpbody-content > div.notice:not(.updated),
+body #wpbody-content > div.update-nag,
+body #wpbody-content > div#message:not(.notice):not(.updated),
+body #wpbody-content > form > div.error,
+body #wpbody-content > form > div.updated:not(.notice),
+body #wpbody-content > form > div.notice:not(.updated),
+body #wpbody-content > form > div#message:not(.notice):not(.updated),
+body #wpbody-content > div#wpse1_2023_complete,
+body #wpbody-content > div.ctf_notice,
+body #wpbody-content > div.wpstg_fivestar {
   display: none !important;
+  border: 5px solid red !important;
+}
+body #wpbody-content > .wrap > div.error,
+body #wpbody-content > .wrap > div.updated:not(.notice),
+body #wpbody-content > .wrap > div.notice:not(.updated),
+body #wpbody-content > .wrap > div.update-nag,
+body #wpbody-content > .wrap > div#message:not(.notice):not(.updated),
+body #wpbody-content > .wrap > form > div.error,
+body #wpbody-content > .wrap > form > div.updated:not(.notice),
+body #wpbody-content > .wrap > form > div.notice:not(.updated),
+body #wpbody-content > .wrap > form > div#message:not(.notice):not(.updated),
+body #wpbody-content > .wrap > div#wpse1_2023_complete,
+body #wpbody-content > .wrap > div.ctf_notice,
+body #wpbody-content > .wrap > div.wpstg_fivestar {
+  display: none !important;
+  border: 5px solid red !important;
 }
 body.hidden-admin-notices-panel-active {
   /* Hide original WP screen meta links */
@@ -152,28 +152,50 @@ body.hidden-admin-notices-panel-active #hidden-admin-notices-link-wrap #screen-m
 body.hidden-admin-notices-panel-active #hidden-admin-notices-link-wrap #screen-meta-links #contextual-help-link-wrap {
   visibility: hidden;
 }
+body.hidden-admin-notices-active {
+  /* Show HAN tab if HAN is active */
+}
+body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
+  display: block;
+}
+body.hidden-admin-notices-inactive {
+  /* Show all notices if HAN is inactive */
+  /* Hide HAN tab if HAN is inactive */
+}
+body.hidden-admin-notices-inactive div.error,
+body.hidden-admin-notices-inactive div.updated:not(.notice),
+body.hidden-admin-notices-inactive div.notice:not(.updated),
+body.hidden-admin-notices-inactive div.update-nag,
+body.hidden-admin-notices-inactive div#message:not(.notice):not(.updated),
+body.hidden-admin-notices-inactive form > div.error,
+body.hidden-admin-notices-inactive form > div.updated:not(.notice),
+body.hidden-admin-notices-inactive form > div.notice:not(.updated),
+body.hidden-admin-notices-inactive form > div#message:not(.notice):not(.updated),
+body.hidden-admin-notices-inactive div#wpse1_2023_complete,
+body.hidden-admin-notices-inactive div.ctf_notice,
+body.hidden-admin-notices-inactive div.wpstg_fivestar {
+  display: block !important;
+  border: 5px solid red !important;
+}
+body.hidden-admin-notices-inactive #hidden-admin-notices-link-wrap {
+  display: none;
+}
 
 /**
  * Specific plugin support
  */
-/* WooCommerce support */
-.woocommerce-embed-page #hidden-admin-notices-link-wrap,
-.woocommerce-embed-page #hidden-admin-notices-panel {
-  position: relative;
-  top: 56px;
-}
-
+/* WooCommerce */
 .woocommerce-page #hidden-admin-notices-link {
   margin-top: -1px;
 }
 
-/* JetPack support */
+/* JetPack */
 .jetpack-pagestyles #hidden-admin-notices-link-wrap {
   position: relative;
   z-index: 10;
 }
 
-/* Formidable forms support */
+/* Formidable forms */
 .frm-white-body #hidden-admin-notices-link {
   position: absolute;
   right: 308px;

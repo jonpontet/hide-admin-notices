@@ -1,73 +1,69 @@
 /* global jQuery */
 (function ($) {
   var $body = $('body'),
-    $allAdminNotices = $('#wpbody-content>div.error:visible,' +
-      '#wpbody-content>div.updated:not(.notice):visible,' +
-      '#wpbody-content>div.notice:not(.updated):visible,' +
-      '#wpbody-content>div.update-nag:visible,' +
-      '#wpbody-content>div#message:not(.notice):not(.updated):visible,' +
-      '#wpbody-content>div#wpse1_2023_complete,' + // WP Clone
-      '#wpbody-content>div.ctf_notice,' + // Custom Twitter Feeds
-      '#wpbody-content>div.wpstg_fivestar' // WP Stage
-    ), $hanPanel = $('#hidden-admin-notices-panel'),
+    allAdminNotices = ['> div.error',
+      '> div.updated:not(.notice)',
+      '> div.notice:not(.updated)',
+      '> div.update-nag',
+      '> div#message:not(.notice):not(.updated)',
+      '> form>div.error,' +
+      '> form>div.updated:not(.notice),' +
+      '> form>div.notice:not(.updated),' +
+      '> form>div#message:not(.notice):not(.updated)',
+      '> div#wpse1_2023_complete', // WP Clone
+      '> div.ctf_notice', // Custom Twitter Feeds
+      '> div.wpstg_fivestar' // WP Stage
+    ],
+    hanPanelSelector = '#hidden-admin-notices-panel',
+    $hanPanel = $(hanPanelSelector),
     $hanToggleButton = $('#hidden-admin-notices-link'),
     $hanToggleButtonWrap = $('#hidden-admin-notices-link-wrap'),
-    $screenMetaLinks = $('#screen-meta-links');
+    $screenMetaLinks = $('#screen-meta-links'),
+    isWcEmbedPage = $body.hasClass('woocommerce-embed-page');
 
-  // Always run for WooCommerce pages
-  // Or do not run if no applicable notices
-  if (!$body.hasClass('woocommerce-embed-page') &&
-    !$allAdminNotices.length) {
+  // Do not run for WooCommerce admin v4.3+
+  if (isWcEmbedPage) {
     return;
   }
 
-  // Immediately add active mode class
-  $body.addClass('hidden-admin-notices-active');
-
-  // Start by moving standard notices
-  $allAdminNotices.detach().appendTo($hanPanel).show();
-
-  // Copy WP default screen meta links to conserve toggle button placement when expanded
-  $screenMetaLinks.clone().appendTo($hanToggleButtonWrap);
-
-  $hanToggleButton.on('click', function () {
-    if ($hanPanel.is(':visible')) {
-      $hanPanel.slideUp('fast', function () {
-        $body.removeClass('hidden-admin-notices-panel-active');
-        $hanToggleButton.removeClass('hidden-admin-notices-panel-active')
-          .attr('aria-expanded', false);
-      });
-    } else {
-      $body.addClass('hidden-admin-notices-panel-active');
-      $hanPanel.slideDown('fast', function () {
-        this.focus();
-        $hanToggleButton.addClass('hidden-admin-notices-panel-active')
-          .attr('aria-expanded', true);
-      });
-    }
-  });
-
-  // On document ready
+  // Run after all notices have been move to .wrap
   $(function () {
-    // Monitor notices which get moved to .wrap
-    var startTime = new Date().getTime(),
-      interval = setInterval(function () {
-        // Stop monitoring after 5 seconds
-        if (new Date().getTime() - startTime > 5000) {
-          clearInterval(interval);
-          return;
-        }
-        $('#wpbody-content>.wrap>div.error,' +
-          '#wpbody-content>.wrap>div.updated:not(.notice),' +
-          '#wpbody-content>.wrap>div.notice:not(.updated),' +
-          '#wpbody-content>.wrap>div#message:not(.notice):not(.updated)' +
-          '#wpbody-content>.wrap>form>div.error,' +
-          '#wpbody-content>.wrap>form>div.updated:not(.notice),' +
-          '#wpbody-content>.wrap>form>div.notice:not(.updated),' +
-          '#wpbody-content>.wrap>form>div#message:not(.notice):not(.updated)')
+    // Do not run if no notices are found
+    if (!$(allAdminNotices.join(','), '#wpbody-content > .wrap').length) {
+      // Inactive mode
+      $body.addClass('hidden-admin-notices-inactive');
+      return;
+    }
+
+    // Move notices to han panel
+    $(allAdminNotices.join(','), '#wpbody-content > .wrap').each(function () {
+        $(this)
           .detach()
-          .appendTo($hanPanel)
-          .show();
-      }, 250);
+          .appendTo($hanPanel);
+      }
+    );
+
+    // Active mode
+    $body.addClass('hidden-admin-notices-active');
+
+    // Copy WP default screen meta links to conserve toggle button placement when expanded
+    $screenMetaLinks.clone().appendTo($hanToggleButtonWrap);
+
+    $hanToggleButton.on('click', function () {
+      if ($hanPanel.is(':visible')) {
+        $hanPanel.slideUp('fast', function () {
+          $body.removeClass('hidden-admin-notices-panel-active');
+          $hanToggleButton.removeClass('hidden-admin-notices-panel-active')
+            .attr('aria-expanded', false);
+        });
+      } else {
+        $body.addClass('hidden-admin-notices-panel-active');
+        $hanPanel.slideDown('fast', function () {
+          this.focus();
+          $hanToggleButton.addClass('hidden-admin-notices-panel-active')
+            .attr('aria-expanded', true);
+        });
+      }
+    });
   })
 })(jQuery);
