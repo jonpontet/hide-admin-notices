@@ -10,12 +10,12 @@ const postcss = require('gulp-postcss');
 
 const files = {
   src: {
-    css: 'assets/scss/hide-admin-notices.scss',
+    css: 'assets/scss/*.scss',
     js: 'assets/js/*.js'
   },
   dist: {
-    css: '../assets/css/',
-    js: '../assets/js/'
+    css: '../dist/assets/css/',
+    js: '../dist/assets/js/'
   }
 };
 
