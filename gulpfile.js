@@ -10,12 +10,12 @@ const postcss = require('gulp-postcss');
 
 const files = {
   src: {
-    css: 'assets/scss/*.scss',
-    js: 'assets/js/*.js'
+    css: 'src/scss/*.scss',
+    js: 'src/js/*.js'
   },
   dist: {
-    css: '../dist/assets/css/',
-    js: '../dist/assets/js/'
+    css: 'assets/css/',
+    js: 'assets/js/'
   }
 };
 

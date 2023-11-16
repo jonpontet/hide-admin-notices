@@ -78,6 +78,18 @@ class Hide_Admin_Notices_Admin {
   }
 
   /**
+   * Attach the active class to the page body.
+   *
+   * @return string
+   */
+  public function admin_body_class($admin_body_class) {
+    $classes   = explode( ' ', trim( $admin_body_class ) );
+    $classes[] = 'hidden-admin-notices-active';
+    $admin_body_class = implode( ' ', array_unique( $classes ) );
+    return " $admin_body_class ";
+  }
+
+  /**
    * Plugin placeholder elements.
    *
    * @return string

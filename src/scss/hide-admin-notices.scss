@@ -35,7 +35,7 @@ $grid-breakpoints: (
 
   /* HAN toggle button */
   #hidden-admin-notices-link {
-    border: 1px solid #ccd0d4;
+    border: 1px solid #c3c4c7;
     border-top: none;
     height: auto;
     margin-bottom: 0;
@@ -146,7 +146,7 @@ $grid-breakpoints: (
   display: block !important;
 }
 
-body {
+body.hidden-admin-notices-active {
   /* Hide all notices on initial page load */
   #wpbody-content > {
     @include all-notices(none);
@@ -176,22 +176,22 @@ body {
     }
   }
 
-  &.hidden-admin-notices-active {
+  //&.hidden-admin-notices-active {
     /* Show HAN tab if HAN is active */
     #hidden-admin-notices-link-wrap {
       display: block;
     }
-  }
+  //}
 
-  &.hidden-admin-notices-inactive {
-    /* Show all notices if HAN is inactive */
-    @include all-notices(block);
-
-    /* Hide HAN tab if HAN is inactive */
-    #hidden-admin-notices-link-wrap {
-      display: none;
-    }
-  }
+  //&.hidden-admin-notices-inactive {
+  //  /* Show all notices if HAN is inactive */
+  //  @include all-notices(block);
+  //
+  //  /* Hide HAN tab if HAN is inactive */
+  //  #hidden-admin-notices-link-wrap {
+  //    display: none;
+  //  }
+  //}
 }
 
 
@@ -200,7 +200,8 @@ body {
  */
 
 /* WooCommerce */
-.woocommerce-page #hidden-admin-notices-link {
+.woocommerce-admin-page #hidden-admin-notices-link-wrap {
+  position: relative;
   margin-top: -1px;
 }
 
