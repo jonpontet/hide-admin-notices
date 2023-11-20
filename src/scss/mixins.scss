@@ -1,0 +1,14 @@
+@mixin all-notices($d) {
+  div.error,
+  div.updated:not(.notice),
+  div.notice:not(.updated),
+  div.update-nag,
+  div#message:not(.notice):not(.updated),
+  form > div.error,
+  form > div.updated:not(.notice),
+  form > div.notice:not(.updated),
+  form > div#message:not(.notice):not(.updated) {
+    display: $d !important;
+    border: 5px solid red !important;
+  }
+}

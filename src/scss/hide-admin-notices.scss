@@ -1,31 +1,6 @@
-@mixin all-notices($d) {
-  div.error,
-  div.updated:not(.notice),
-  div.notice:not(.updated),
-  div.update-nag,
-  div#message:not(.notice):not(.updated),
-  form > div.error,
-  form > div.updated:not(.notice),
-  form > div.notice:not(.updated),
-  form > div#message:not(.notice):not(.updated),
-  div#wpse1_2023_complete,
-  div.ctf_notice,
-  div.wpstg_fivestar {
-    display: $d !important;
-    border: 5px solid red !important;
-  }
-}
-
-/* Bootstrap dependency */
-$grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 782px,
-        lg: 992px,
-        xl: 1200px
-);
-
-@import "./node_modules/bootstrap/scss/mixins/breakpoints";
+@import "mixins";
+@import "variables";
+@import "bootstrap/scss/mixins/breakpoints";
 
 /* HAN link wrap */
 #hidden-admin-notices-link-wrap {
@@ -140,20 +115,25 @@ $grid-breakpoints: (
   }
 }
 
+// For when the #sreen-meta-links have been removed i.e. #screen-meta is the sibling before #hidden-admin-notices-panel and not #sreen-meta-links.
+#screen-meta + #hidden-admin-notices-panel + #hidden-admin-notices-link-wrap {
+  margin-right: 20px;
+}
+
 /* Show all notices when they have moved to the notices panel */
 #wpbody-content > #hidden-admin-notices-panel > * {
   position: relative !important;
   display: block !important;
 }
 
-body.hidden-admin-notices-active {
+body {
   /* Hide all notices on initial page load */
   #wpbody-content > {
     @include all-notices(none);
   }
 
   /* Hide all notices after being moved to .wrap */
-  #wpbody-content > .wrap > {
+  #wpbody-content .wrap > {
     @include all-notices(none);
   }
 
@@ -176,12 +156,12 @@ body.hidden-admin-notices-active {
     }
   }
 
-  //&.hidden-admin-notices-active {
+  &.hidden-admin-notices-active {
     /* Show HAN tab if HAN is active */
     #hidden-admin-notices-link-wrap {
       display: block;
     }
-  //}
+  }
 
   //&.hidden-admin-notices-inactive {
   //  /* Show all notices if HAN is inactive */

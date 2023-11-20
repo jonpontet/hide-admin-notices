@@ -10,7 +10,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "install": "^0.13.0",
-    "npm": "^6.14.9"
+    "npm": "^6.14.9",
+    "npm-run-all": "^4.1.5"
   },
   "devDependencies": {
     "bootstrap": "^4.6.1",
@@ -20,6 +21,7 @@
   },
   "scripts": {
     "watch": "gulp",
+    "build": "run-p build:*",
     "build:css": "gulp css",
     "build:js": "gulp js"
   }

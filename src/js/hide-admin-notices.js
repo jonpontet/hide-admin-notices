@@ -12,38 +12,25 @@
       '> form>div.updated:not(.notice),' +
       '> form>div.notice:not(.updated),' +
       '> form>div#message:not(.notice):not(.updated)',
-      '> div#wpse1_2023_complete', // WP Clone
-      '> div.ctf_notice', // Custom Twitter Feeds
-      '> div.wpstg_fivestar' // WP Stage
     ],
     activeClass = 'hidden-admin-notices-active',
     hanPanelSelector = '#hidden-admin-notices-panel',
     $hanPanel = $(hanPanelSelector),
     $hanToggleButton = $('#hidden-admin-notices-link'),
     $hanToggleButtonWrap = $('#hidden-admin-notices-link-wrap'),
-    $screenMetaLinks = $('#screen-meta-links'),
-    isWcEmbedPage = $body.hasClass('woocommerce-embed-page');
-
-  // Default to active mode – hide all notices by default.
-  // $body.addClass(activeClass);
-
-  // Do not run for WooCommerce admin v4.3+.
-  // if (isWcEmbedPage) {
-  //   $body.removeClass(activeClass);
-  //   return;
-  // }
+    $screenMetaLinks = $('#screen-meta-links');
 
   // Run after WP has moved all notices after .wp-header-end.
   $(function () {
     // Do not run if no notices are found.
-    if (!$(allAdminNotices.join(','), '#wpbody-content > .wrap').length) {
-      // Deactivate active mode.
-      $body.removeClass('hidden-admin-notices-active');
+    if (!$(allAdminNotices.join(','), '#wpbody-content .wrap').length) {
       return;
     }
 
+    $body.addClass('hidden-admin-notices-active');
+
     // Move notices to han panel.
-    $(allAdminNotices.join(','), '#wpbody-content > .wrap').each(function () {
+    $(allAdminNotices.join(','), '#wpbody-content .wrap').each(function () {
         $(this)
           .detach()
           .appendTo($hanPanel);
