@@ -1,5 +1,11 @@
 <?php
 
+declare( strict_types=1 );
+
+namespace Hide_Admin_Notices;
+
+use Hide_Admin_Notices;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -17,7 +23,11 @@
  * @subpackage Hide_Admin_Notices/admin
  * @author     PontetLabs <hi@pontetlabs.com>
  */
-class Hide_Admin_Notices_Admin {
+class Admin {
+
+  private const DONATE_LINK = 'https://www.buymeacoffee.com/pontetlabs';
+
+  private const RATE_LINK = 'https://wordpress.org/support/plugin/hide-admin-notices/reviews/#new-post';
 
   /**
    * Register the CSS and JavaScript for the admin area.
@@ -29,14 +39,14 @@ class Hide_Admin_Notices_Admin {
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
       $minified = '';
     }
-    wp_enqueue_style( HIDE_ADMIN_NOTICES_NAME,
+    wp_enqueue_style( Hide_Admin_Notices::PLUGIN_NAME,
       HIDE_ADMIN_NOTICES_BASEURL . 'assets/css/hide-admin-notices' . $minified . '.css',
-      [], HIDE_ADMIN_NOTICES_VERSION );
-    wp_register_script( HIDE_ADMIN_NOTICES_NAME,
+      [], Hide_Admin_Notices::VERSION );
+    wp_register_script( Hide_Admin_Notices::PLUGIN_NAME,
       HIDE_ADMIN_NOTICES_BASEURL . 'assets/js/hide-admin-notices' . $minified . '.js',
       array( 'jquery' ),
-      HIDE_ADMIN_NOTICES_VERSION, true );
-    wp_enqueue_script( HIDE_ADMIN_NOTICES_NAME );
+        Hide_Admin_Notices::VERSION, true );
+    wp_enqueue_script( Hide_Admin_Notices::PLUGIN_NAME );
   }
 
   /**
@@ -47,7 +57,7 @@ class Hide_Admin_Notices_Admin {
   public function plugin_row_meta( $links, $file ) {
     if ( HIDE_ADMIN_NOTICES_BASENAME === $file ) {
       $row_meta = array(
-        'donate' => '<a target="_blank" href="' . esc_url( HIDE_ADMIN_NOTICES_DONATE_LINK ) .
+        'donate' => '<a target="_blank" href="' . esc_url( self::DONATE_LINK ) .
                     '" aria-label="' . esc_attr__( 'Donate a $1', 'hide-admin-notices' ) .
                     '">' . esc_html__( 'Donate a $1', 'hide-admin-notices' ) . '</a>',
       );
@@ -69,7 +79,7 @@ class Hide_Admin_Notices_Admin {
    */
   public function plugin_action_links( $links ) {
     $rate_link = array(
-      'rate' => '<a target="_blank" href="' . esc_url( HIDE_ADMIN_NOTICES_RATE_LINK ) .
+      'rate' => '<a target="_blank" href="' . esc_url( self::RATE_LINK ) .
                 '" aria-label="' . esc_attr__( 'Like it?', 'hide-admin-notices' ) .
                 '">' . esc_html__( 'Like it?', 'hide-admin-notices' ) . '</a>',
     );

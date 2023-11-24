@@ -1,5 +1,11 @@
 <?php
 
+declare( strict_types=1 );
+
+namespace Hide_Admin_Notices;
+
+use Hide_Admin_Notices;
+
 /**
  * Register all actions and filters for the plugin
  *
@@ -21,7 +27,7 @@
  * @subpackage Hide_Admin_Notices/includes
  * @author     PontetLabs <hi@pontetlabs.com>
  */
-class Hide_Admin_Notices_Loader {
+class Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

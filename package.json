@@ -2,6 +2,8 @@
   "name": "hide-admin-notices",
   "version": "2.0",
   "dependencies": {
+  },
+  "devDependencies": {
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
@@ -11,9 +13,7 @@
     "gulp-uglify": "^3.0.2",
     "install": "^0.13.0",
     "npm": "^6.14.9",
-    "npm-run-all": "^4.1.5"
-  },
-  "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "bootstrap": "^4.6.1",
     "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",

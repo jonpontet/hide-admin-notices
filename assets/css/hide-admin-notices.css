@@ -187,4 +187,9 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
   display: none;
 }
 
+/* Admin settings page */
+.settings_page_hide-admin-notices #wpcontent {
+  padding-left: 0;
+}
+
 /* Bootstrap dependency */

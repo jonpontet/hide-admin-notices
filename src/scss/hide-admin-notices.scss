@@ -205,3 +205,9 @@ body {
 .post-php.post-type-frm_display #hidden-admin-notices-link {
   display: none;
 }
+
+
+/* Admin settings page */
+.settings_page_hide-admin-notices #wpcontent {
+  padding-left: 0;
+}

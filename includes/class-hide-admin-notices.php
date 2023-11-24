@@ -8,6 +8,11 @@
  * @subpackage Hide_Admin_Notices/includes
  */
 
+use Hide_Admin_Notices\Context;
+use Hide_Admin_Notices\Admin;
+use Hide_Admin_Notices\Loader;
+use Hide_Admin_Notices\Options;
+
 /**
  * @since      1.0.0
  * @package    Hide_Admin_Notices
@@ -16,33 +21,39 @@
  */
 class Hide_Admin_Notices {
 
-	/**
+    /**
+     * The unique identifier of this plugin.
+     *
+     * @since    1.0.0
+     * @access   protected
+     * @var      string $plugin_name The string used to uniquely identify this plugin.
+     */
+    const PLUGIN_NAME = 'hide-admin-notices';
+
+    const OPTIONS_NAME = 'hide-admin-notices-options';
+
+    /**
+     * The current version of the plugin.
+     *
+     * @since    1.0.0
+     * @access   protected
+     * @var      string $version The current version of the plugin.
+     */
+    const VERSION = '1.2.2';
+
+    /**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Hide_Admin_Notices_Loader $loader Maintains and registers all hooks for the plugin.
+	 * @var      Loader $loader Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
-	/**
-	 * The unique identifier of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string $plugin_name The string used to uniquely identify this plugin.
-	 */
-	public $plugin_name = 'hide-admin-notices';
+    private $context;
 
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string $version The current version of the plugin.
-	 */
-	public $version = '1.2.2';
+    private $config = array();
 
 	/**
 	 * Initialize the class.
@@ -66,10 +77,6 @@ class Hide_Admin_Notices {
 		define( 'HIDE_ADMIN_NOTICES_ABSPATH', dirname( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) . '/' );
 		define( 'HIDE_ADMIN_NOTICES_BASENAME', plugin_basename( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) );
 		define( 'HIDE_ADMIN_NOTICES_BASEURL', plugin_dir_url( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) );
-		define( 'HIDE_ADMIN_NOTICES_VERSION', $this->version );
-		define( 'HIDE_ADMIN_NOTICES_NAME', $this->plugin_name );
-		define( 'HIDE_ADMIN_NOTICES_DONATE_LINK', 'https://www.buymeacoffee.com/pontetlabs' );
-		define( 'HIDE_ADMIN_NOTICES_RATE_LINK', 'https://wordpress.org/support/plugin/hide-admin-notices/reviews/#new-post' );
 	}
 
 	/**
@@ -79,11 +86,15 @@ class Hide_Admin_Notices {
 	 * @access   private
 	 */
 	private function load_dependencies() {
-		require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-hide-admin-notices-loader.php';
-		require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-hide-admin-notices-i18n.php';
-		require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-hide-admin-notices-admin.php';
+        require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-loader.php';
+		require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-context.php';
+        require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-options.php';
+		require_once HIDE_ADMIN_NOTICES_ABSPATH . 'includes/class-admin.php';
 
-		$this->loader = new Hide_Admin_Notices_Loader();
+		$this->loader = new Loader();
+		$this->context = new Context( $this->config );
+		$options = new Options( $this->context );
+        $options->init();
 	}
 
 	/**
@@ -93,8 +104,7 @@ class Hide_Admin_Notices {
 	 * @access   private
 	 */
 	private function set_locale() {
-		$plugin_i18n = new Hide_Admin_Notices_i18n();
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+		$this->loader->add_action( 'plugins_loaded', $this, 'load_plugin_textdomain' );
 	}
 
 	/**
@@ -104,7 +114,7 @@ class Hide_Admin_Notices {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-		$plugin_admin = new Hide_Admin_Notices_Admin();
+		$plugin_admin = new Admin();
 		$this->loader->add_action( 'plugin_row_meta', $plugin_admin, 'plugin_row_meta', 20, 2 );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts', 1 );
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices', PHP_INT_MIN );
@@ -119,4 +129,17 @@ class Hide_Admin_Notices {
 	public function run() {
 		$this->loader->run();
 	}
+
+    /**
+     * Load the plugin text domain for translation.
+     *
+     * @since    2.0.0
+     */
+    public function load_plugin_textdomain() {
+        load_plugin_textdomain(
+            'hide-admin-notices',
+            false,
+            HIDE_ADMIN_NOTICES_ABSPATH . 'languages/'
+        );
+    }
 }
