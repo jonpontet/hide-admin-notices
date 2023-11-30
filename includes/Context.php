@@ -1,10 +1,7 @@
 <?php
-
 declare( strict_types=1 );
 
-namespace Hide_Admin_Notices;
-
-use Hide_Admin_Notices;
+namespace Pontet_Labs\Hide_Admin_Notices;
 
 class Context {
     public array $vars;
@@ -23,7 +20,8 @@ class Context {
         add_action( 'update_option_' . Hide_Admin_Notices::OPTIONS_NAME, array( $this, 'update_option' ) );
     }
 
-    public function update_option( $value ) {
+    public function update_option( $value ): void
+    {
         $this->vars = array_merge( $this->vars, $value );
     }
 
