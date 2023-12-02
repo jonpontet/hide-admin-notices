@@ -3,17 +3,16 @@
 // During page load notices move to #wpbody-content > .wrap > .notice
 (function ($) {
   var $body = $('body'),
-    allAdminNotices = ['> div.error',
+    allAdminNotices = ['> div.error:not(.notice)',
       '> div.updated:not(.notice)',
-      '> div.notice:not(.updated)',
+      '> div.notice:not(.updated):not(.error)',
       '> div.update-nag',
-      '> div#message:not(.notice):not(.updated)',
+      '> div#message:not(.notice):not(.updated):not(.error)',
       '> form>div.error,' +
       '> form>div.updated:not(.notice),' +
       '> form>div.notice:not(.updated),' +
       '> form>div#message:not(.notice):not(.updated)',
     ],
-    activeClass = 'hidden-admin-notices-active',
     hanPanelSelector = '#hidden-admin-notices-panel',
     $hanPanel = $(hanPanelSelector),
     $hanToggleButton = $('#hidden-admin-notices-link'),

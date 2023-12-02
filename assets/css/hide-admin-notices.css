@@ -112,11 +112,11 @@ body {
   /* Hide all notices after being moved to .wrap */
   /* When panel is open */
 }
-body #wpbody-content > div.error,
+body #wpbody-content > div.error:not(.notice),
 body #wpbody-content > div.updated:not(.notice),
-body #wpbody-content > div.notice:not(.updated),
+body #wpbody-content > div.notice:not(.updated):not(.error),
 body #wpbody-content > div.update-nag,
-body #wpbody-content > div#message:not(.notice):not(.updated),
+body #wpbody-content > div#message:not(.notice):not(.updated):not(.error),
 body #wpbody-content > form > div.error,
 body #wpbody-content > form > div.updated:not(.notice),
 body #wpbody-content > form > div.notice:not(.updated),
@@ -124,11 +124,11 @@ body #wpbody-content > form > div#message:not(.notice):not(.updated) {
   display: none !important;
   border: 5px solid red !important;
 }
-body #wpbody-content .wrap > div.error,
+body #wpbody-content .wrap > div.error:not(.notice),
 body #wpbody-content .wrap > div.updated:not(.notice),
-body #wpbody-content .wrap > div.notice:not(.updated),
+body #wpbody-content .wrap > div.notice:not(.updated):not(.error),
 body #wpbody-content .wrap > div.update-nag,
-body #wpbody-content .wrap > div#message:not(.notice):not(.updated),
+body #wpbody-content .wrap > div#message:not(.notice):not(.updated):not(.error),
 body #wpbody-content .wrap > form > div.error,
 body #wpbody-content .wrap > form > div.updated:not(.notice),
 body #wpbody-content .wrap > form > div.notice:not(.updated),
