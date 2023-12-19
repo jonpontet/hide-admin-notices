@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/pontetlabs
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 4.9
 Tested up to: 6.4
-Requires PHP: 5.6
+Requires PHP: 7.4
 Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
