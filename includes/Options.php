@@ -55,6 +55,10 @@ class Options {
 			} else {
 				$plugin_id = $plugin;
 			}
+			// Ignore this plugin!
+			if ( $plugin_id == 'hide-admin-notices' ) {
+				continue;
+			}
 			$plugin_name    = trim( $plugin_data['Name'] );
 			$plugin_version = trim( $plugin_data['Version'] );
 			$option         = [
