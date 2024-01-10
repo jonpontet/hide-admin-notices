@@ -16,7 +16,10 @@ const sass = gulpSass(dartSass);
 const files = {
     src: {
         css: 'src/scss/*.scss',
-        js: 'src/js/*.js'
+        js: [
+          'src/js/hide-admin-notices.js',
+          'src/js/hide-admin-notices-end.js'
+        ]
     },
     dist: {
         css: 'assets/css/',
@@ -32,7 +35,7 @@ gulp.task('css',
             .pipe(sassGlob())
             .pipe(sass({
                 includePaths: ['node_modules/']
-            }))
+            }).on('error', sass.logError))
             .pipe(gulp.dest(files.dist.css))
             .pipe(concat('hide-admin-notices.min.css'))
             .pipe(postcss([cssnano()]))
@@ -41,10 +44,16 @@ gulp.task('css',
 
 gulp.task('js',
     function () {
-        return gulp.src([files.src.js])
+        gulp.src('src/js/hide-admin-notices.js')
             .pipe(concat('hide-admin-notices.js'))
             .pipe(gulp.dest(files.dist.js))
             .pipe(concat('hide-admin-notices.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest(files.dist.js));
+        return gulp.src('src/js/hide-admin-notices-end.js')
+            .pipe(concat('hide-admin-notices-end.js'))
+            .pipe(gulp.dest(files.dist.js))
+            .pipe(concat('hide-admin-notices-end.min.js'))
             .pipe(uglify())
             .pipe(gulp.dest(files.dist.js));
     });
@@ -54,9 +63,7 @@ gulp.task('watch',
         gulp.watch(
             [files.src.css, files.src.js],
             {interval: 1000, usePolling: true},
-            gulp.series(
-                gulp.parallel('css', 'js')
-            )
+            gulp.parallel('css', 'js')
         );
     });
 

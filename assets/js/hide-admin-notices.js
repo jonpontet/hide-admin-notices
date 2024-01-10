@@ -1,59 +1,38 @@
 /* global jQuery */
-// On page load notices exist in #wpbody-content > .notice
-// During page load notices move to #wpbody-content > .wrap > .notice
+// Support for jQuery v3.6.0 for WordPress v5.9.8+.
 (function ($) {
   var $body = $('body'),
-    allAdminNotices = ['> div.error:not(.notice)',
-      '> div.updated:not(.notice)',
-      '> div.notice:not(.updated):not(.error)',
-      '> div.update-nag',
-      '> div#message:not(.notice):not(.updated):not(.error)',
-      '> form>div.error,' +
-      '> form>div.updated:not(.notice),' +
-      '> form>div.notice:not(.updated),' +
-      '> form>div#message:not(.notice):not(.updated)',
-    ],
-    hanPanelSelector = '#hidden-admin-notices-panel',
-    $hanPanel = $(hanPanelSelector),
+    $hanPanel = $('#hidden-admin-notices-panel'),
     $hanToggleButton = $('#hidden-admin-notices-link'),
     $hanToggleButtonWrap = $('#hidden-admin-notices-link-wrap'),
-    $screenMetaLinks = $('#screen-meta-links');
+    $screenMetaLinks = $('#screen-meta-links'),
+    panelActiveBodyClass = 'hidden-admin-notices-panel-active';
 
-  // Run after WP has moved all notices after .wp-header-end.
-  $(function () {
-    // Do not run if no notices are found.
-    if (!$(allAdminNotices.join(','), '#wpbody-content .wrap').length) {
-      return;
+  // Capture all notices.
+  // WP moves notices to after '.wp-header-end'
+  // See /wp-admin/js/common.js line #1083.
+  $('.wp-header-end').wrap('<div id="hidden-admin-notices-notices-capture">');
+  // $('.wp-header-end').clone().insertBefore($hanPanel);
+
+
+  // Copy WP default screen meta links to conserve toggle button placement when expanded.
+  $screenMetaLinks.clone().appendTo($hanToggleButtonWrap);
+
+  // Add panel toggle event.
+  $hanToggleButton.on('click', function () {
+    if ($hanPanel.is(':visible')) {
+      $hanPanel.slideUp('fast', function () {
+        $body.removeClass(panelActiveBodyClass);
+        $hanToggleButton.removeClass(panelActiveBodyClass)
+          .attr('aria-expanded', false);
+      });
+    } else {
+      $body.addClass(panelActiveBodyClass);
+      $hanPanel.slideDown('fast', function () {
+        this.focus();
+        $hanToggleButton.addClass(panelActiveBodyClass)
+          .attr('aria-expanded', true);
+      });
     }
-
-    $body.addClass('hidden-admin-notices-active');
-
-    // Move notices to han panel.
-    $(allAdminNotices.join(','), '#wpbody-content .wrap').each(function () {
-        $(this)
-          .detach()
-          .appendTo($hanPanel);
-      }
-    );
-
-    // Copy WP default screen meta links to conserve toggle button placement when expanded
-    $screenMetaLinks.clone().appendTo($hanToggleButtonWrap);
-
-    $hanToggleButton.on('click', function () {
-      if ($hanPanel.is(':visible')) {
-        $hanPanel.slideUp('fast', function () {
-          $body.removeClass('hidden-admin-notices-panel-active');
-          $hanToggleButton.removeClass('hidden-admin-notices-panel-active')
-            .attr('aria-expanded', false);
-        });
-      } else {
-        $body.addClass('hidden-admin-notices-panel-active');
-        $hanPanel.slideDown('fast', function () {
-          this.focus();
-          $hanToggleButton.addClass('hidden-admin-notices-panel-active')
-            .attr('aria-expanded', true);
-        });
-      }
-    });
-  })
+  });
 })(jQuery);

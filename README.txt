@@ -2,7 +2,7 @@
 Contributors: etalented
 Donate link: https://www.buymeacoffee.com/pontetlabs
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
-Requires at least: 4.9
+Requires at least: 5.9.8
 Tested up to: 6.4
 Requires PHP: 7.4
 Stable tag: 2.0

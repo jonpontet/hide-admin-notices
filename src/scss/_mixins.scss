@@ -1,4 +1,11 @@
 @mixin all-notices($d) {
+  div.error:not(.inline):not(.below-h2),
+  div.updated:not(.inline):not(.below-h2),
+  div.notice:not(.inline):not(.below-h2) {
+    display: $d !important;
+  }
+}
+/*@mixin all-notices($d) {
   div.error:not(.notice),
   div.updated:not(.notice),
   div.notice:not(.updated):not(.error),
@@ -11,4 +18,4 @@
     display: $d !important;
     border: 5px solid red !important;
   }
-}
+}*/
