@@ -34,42 +34,56 @@ class Admin {
 
   public function init(): void {
     add_action( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 20, 2 );
-    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), PHP_INT_MIN );
+    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_start' ), PHP_INT_MIN );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_end' ), PHP_INT_MAX );
     add_action( 'admin_notices', array( $this, 'add_panel_links' ), 1 );
     add_filter( 'plugin_action_links_' . HIDE_ADMIN_NOTICES_BASENAME, array( $this, 'plugin_action_links' ) );
   }
 
-  /**
-   * Register the CSS and JavaScript for the admin area.
-   *
-   * @since    1.0.0
-   */
-  public function enqueue_scripts(): void {
-    $minified = '.min';
-    if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
-      $minified = '';
-    }
-    wp_enqueue_style( HIDE_ADMIN_NOTICES_BASENAME,
-      HIDE_ADMIN_NOTICES_URL . 'assets/css/hide-admin-notices' . $minified . '.css',
-      [], HIDE_ADMIN_NOTICES_VERSION );
-    wp_register_script( HIDE_ADMIN_NOTICES_BASENAME,
-      HIDE_ADMIN_NOTICES_URL . 'assets/js/hide-admin-notices' . $minified . '.js',
-      array( 'jquery' ),
-      HIDE_ADMIN_NOTICES_VERSION, true );
-    wp_enqueue_script( HIDE_ADMIN_NOTICES_BASENAME );
+  public function enqueue_scripts_start(): void {
+    $this->enqueue_scripts( PHP_INT_MIN );
   }
 
   public function enqueue_scripts_end(): void {
+    $this->enqueue_scripts( PHP_INT_MAX );
+  }
+
+  /**
+   * Register the CSS and JavaScript.
+   *
+   * @param int $priority
+   *
+   * @since    1.0.0
+   */
+  public function enqueue_scripts( int $priority = null ): void {
     $minified = '.min';
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG === true ) {
       $minified = '';
     }
-    wp_register_script( HIDE_ADMIN_NOTICES_BASENAME . '-end',
-      HIDE_ADMIN_NOTICES_URL . 'assets/js/hide-admin-notices-end' . $minified . '.js',
+    $script_vars    = [
+      'panelSelector'           => '#hidden-admin-notices-panel',
+      'linkSelector'            => '#hidden-admin-notices-link',
+      'linkWrapSelector'        => '#hidden-admin-notices-link-wrap',
+      'panelActiveClass'        => 'hidden-admin-notices-panel-active',
+      'captureId'               => 'hidden-admin-notices-capture',
+      'activeBodyClass'         => 'hidden-admin-notices-active',
+      'screenMetaLinksSelector' => '#screen-meta-links',
+      'wpHeaderEndSelector'     => '.wp-header-end',
+      'updateNagSelector'       => 'div.update-nag'
+    ];
+    $style_handler  = 'hide-admin-notices';
+    $script_handler = ( $priority === PHP_INT_MIN ) ? 'hide-admin-notices-start' : 'hide-admin-notices-end';
+    if ( $priority === PHP_INT_MIN ) {
+      wp_enqueue_style( $style_handler,
+        HIDE_ADMIN_NOTICES_URL . 'assets/css/hide-admin-notices' . $minified . '.css',
+        [], HIDE_ADMIN_NOTICES_VERSION );
+    }
+    wp_register_script( $script_handler,
+      HIDE_ADMIN_NOTICES_URL . 'assets/js/' . $script_handler . $minified . '.js',
       array( 'jquery' ),
       HIDE_ADMIN_NOTICES_VERSION, true );
-    wp_enqueue_script( HIDE_ADMIN_NOTICES_BASENAME . '-end' );
+    wp_localize_script( $script_handler, 'hideAdminNoticesVars', $script_vars );
+    wp_enqueue_script( $script_handler );
   }
 
   /**

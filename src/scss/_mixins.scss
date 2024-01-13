@@ -1,9 +1,13 @@
 @mixin all-notices($d) {
+  // Standard notices.
   div.error:not(.inline):not(.below-h2),
   div.updated:not(.inline):not(.below-h2),
-  div.notice:not(.inline):not(.below-h2) {
-    display: $d !important;
+  div.notice:not(.inline):not(.below-h2),
+  // Update nag.
+  div.update-nag {
+    display: $d;
   }
+
 }
 /*@mixin all-notices($d) {
   div.error:not(.notice),

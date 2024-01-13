@@ -108,13 +108,15 @@
 
 body div.error:not(.inline):not(.below-h2),
 body div.updated:not(.inline):not(.below-h2),
-body div.notice:not(.inline):not(.below-h2) {
-  display: none !important;
+body div.notice:not(.inline):not(.below-h2),
+body div.update-nag {
+  display: none;
 }
 body #hidden-admin-notices-panel div.error:not(.inline):not(.below-h2),
 body #hidden-admin-notices-panel div.updated:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2) {
-  display: block !important;
+body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2),
+body #hidden-admin-notices-panel div.update-nag {
+  display: block;
 }
 body.hidden-admin-notices-panel-active {
   /* Hide original WP screen meta links */
@@ -309,13 +311,15 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
 
 body div.error:not(.inline):not(.below-h2),
 body div.updated:not(.inline):not(.below-h2),
-body div.notice:not(.inline):not(.below-h2) {
-  display: none !important;
+body div.notice:not(.inline):not(.below-h2),
+body div.update-nag {
+  display: none;
 }
 body #hidden-admin-notices-panel div.error:not(.inline):not(.below-h2),
 body #hidden-admin-notices-panel div.updated:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2) {
-  display: block !important;
+body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2),
+body #hidden-admin-notices-panel div.update-nag {
+  display: block;
 }
 body.hidden-admin-notices-panel-active {
   /* Hide original WP screen meta links */

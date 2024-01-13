@@ -9,6 +9,7 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
 import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
 
 const {src, dest, watch, series, parallel} = gulp;
 const sass = gulpSass(dartSass);
@@ -16,8 +17,9 @@ const sass = gulpSass(dartSass);
 const files = {
     src: {
         css: 'src/scss/*.scss',
+        js_glob: 'src/js/*.js',
         js: [
-          'src/js/hide-admin-notices.js',
+          'src/js/hide-admin-notices-start.js',
           'src/js/hide-admin-notices-end.js'
         ]
     },
@@ -43,25 +45,23 @@ gulp.task('css',
     });
 
 gulp.task('js',
-    function () {
-        gulp.src('src/js/hide-admin-notices.js')
-            .pipe(concat('hide-admin-notices.js'))
-            .pipe(gulp.dest(files.dist.js))
-            .pipe(concat('hide-admin-notices.min.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest(files.dist.js));
-        return gulp.src('src/js/hide-admin-notices-end.js')
-            .pipe(concat('hide-admin-notices-end.js'))
-            .pipe(gulp.dest(files.dist.js))
-            .pipe(concat('hide-admin-notices-end.min.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest(files.dist.js));
+    function (done) {
+      files.src.js.forEach(function ($script) {
+        gulp.src($script)
+          .pipe(gulp.dest(files.dist.js))
+          .pipe(rename(function (path) {
+            path.extname = ".min.js"
+          }))
+          .pipe(uglify())
+          .pipe(gulp.dest(files.dist.js));
+      });
+      done();
     });
 
 gulp.task('watch',
     function () {
         gulp.watch(
-            [files.src.css, files.src.js],
+            [files.src.css, files.src.js_glob],
             {interval: 1000, usePolling: true},
             gulp.parallel('css', 'js')
         );
