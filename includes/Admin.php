@@ -171,15 +171,17 @@ class Admin {
     // 1) WP important notices e.g. "Plugin activated".
     // 2) Notices that common.js has not moved i.e. `.inline, .below-h2`.
     $common_nots = ':not(#message):not(.inline):not(.below-h2)';
+    // Avoid forcing the display of hidden notices.
+    $panel_nots = "$common_nots:not(.hidden)";
     // Errors.
     $style[] = "div.error$common_nots { display:none; }";
-    $style[] = "#hidden-admin-notices-panel div.error$common_nots { display:block; }";
+    $style[] = "#hidden-admin-notices-panel div.error$panel_nots { display:block; }";
     // Updated notices.
     $style[] = "div.updated$common_nots { display:none; }";
-    $style[] = "#hidden-admin-notices-panel div.updated$common_nots { display:block; }";
+    $style[] = "#hidden-admin-notices-panel div.updated$panel_nots { display:block; }";
     // Standard notices.
     $style[] = "div.notice$common_nots { display:none; }";
-    $style[] = "#hidden-admin-notices-panel div.notice$common_nots { display:block; }";
+    $style[] = "#hidden-admin-notices-panel div.notice$panel_nots { display:block; }";
     // WP update nag.
     $style[] = "div.update-nag { display:none; }";
     $style[] = "#hidden-admin-notices-panel div.update-nag { display:block; }";

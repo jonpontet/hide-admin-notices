@@ -30,7 +30,7 @@ const files = {
     css: 'assets/css/',
     js: 'assets/js/'
   },
-  package: ['./**', '!./node_modules{,/**}', '!./src{,/**}', '!./composer.*', '!./gulpfile.js', '!./package*'],
+  package: ['./**', '!./node_modules{,/**}', '!./src{,/**}', '!./composer.*', '!./gulpfile.js', '!./package*', '!./*.zip'],
 };
 
 gulp.task('css',
