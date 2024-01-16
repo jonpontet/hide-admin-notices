@@ -7,7 +7,7 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 class Options {
-	private const BUG_REPORT_EMAIL_RECIPIENT = 'jira@pontetlabs.atlassian.net';
+	private const BUG_REPORT_EMAIL_RECIPIENT = 'support@pontetlabs.com';
 
 	private const BUG_REPORT_EMAIL_SUBJECT = 'Plugin Bug Report';
 

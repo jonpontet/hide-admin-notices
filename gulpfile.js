@@ -3,75 +3,84 @@
 import zip from 'gulp-zip';
 import gulp from 'gulp';
 import cssnano from 'cssnano';
-import uglify from 'gulp-uglify';
+import composer from 'gulp-uglify/composer.js';
+import uglifyJs from 'uglify-js';
 import concat from 'gulp-concat';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
+import pump from 'pump';
 
 const {src, dest, watch, series, parallel} = gulp;
 const sass = gulpSass(dartSass);
+const minify = composer(uglifyJs, console);
 
 const files = {
-    src: {
-        css: 'src/scss/*.scss',
-        js_glob: 'src/js/*.js',
-        js: [
-          'src/js/hide-admin-notices-start.js',
-          'src/js/hide-admin-notices-end.js'
-        ]
-    },
-    dist: {
-        css: 'assets/css/',
-        js: 'assets/js/'
-    },
-    package: ['./**', '!./node_modules{,/**}', '!./src{,/**}', '!./composer.*', '!./gulpfile.js', '!./package*'],
+  src: {
+    css: 'src/scss/*.scss',
+    js_glob: 'src/js/*.js',
+    js: [
+      'src/js/hide-admin-notices-start.js',
+      'src/js/hide-admin-notices-end.js'
+    ]
+  },
+  dist: {
+    css: 'assets/css/',
+    js: 'assets/js/'
+  },
+  package: ['./**', '!./node_modules{,/**}', '!./src{,/**}', '!./composer.*', '!./gulpfile.js', '!./package*'],
 };
 
 gulp.task('css',
-    function () {
-        return gulp.src(files.src.css)
-            .pipe(concat('hide-admin-notices.css'))
-            .pipe(sassGlob())
-            .pipe(sass({
-                includePaths: ['node_modules/']
-            }).on('error', sass.logError))
-            .pipe(gulp.dest(files.dist.css))
-            .pipe(concat('hide-admin-notices.min.css'))
-            .pipe(postcss([cssnano()]))
-            .pipe(gulp.dest(files.dist.css));
-    });
+  function () {
+    return pump([
+      gulp.src(files.src.css),
+      concat('hide-admin-notices.css'),
+      sassGlob(),
+      sass({
+        includePaths: ['node_modules/']
+      }).on('error', sass.logError),
+      gulp.dest(files.dist.css),
+      concat('hide-admin-notices.min.css'),
+      postcss([cssnano()]),
+      gulp.dest(files.dist.css)
+    ]);
+  });
 
 gulp.task('js',
-    function (done) {
-      files.src.js.forEach(function ($script) {
-        gulp.src($script)
-          .pipe(gulp.dest(files.dist.js))
-          .pipe(rename(function (path) {
-            path.extname = ".min.js"
-          }))
-          .pipe(uglify())
-          .pipe(gulp.dest(files.dist.js));
-      });
-      done();
+  function (done) {
+    files.src.js.forEach(function ($script) {
+      pump([
+        gulp.src($script),
+        gulp.dest(files.dist.js),
+        rename(function (path) {
+          path.extname = ".min.js"
+        }),
+        minify({}),
+        gulp.dest(files.dist.js)
+      ]);
     });
+    done();
+  });
 
 gulp.task('watch',
-    function () {
-        gulp.watch(
-            [files.src.css, files.src.js_glob],
-            {interval: 1000, usePolling: true},
-            gulp.parallel('css', 'js')
-        );
-    });
+  function () {
+    gulp.watch(
+      [files.src.css, files.src.js_glob],
+      {interval: 1000, usePolling: true},
+      gulp.parallel('css', 'js')
+    );
+  });
 
 gulp.task('package',
-    function () {
-        return gulp.src(files.package)
-            .pipe(zip('hide-admin-notices.zip'))
-            .pipe(gulp.dest('./'));
-    });
+  function () {
+    return pump([
+      gulp.src(files.package),
+      zip('hide-admin-notices.zip'),
+      gulp.dest('./')
+    ]);
+  });
 
 gulp.task('default', gulp.series('watch'));

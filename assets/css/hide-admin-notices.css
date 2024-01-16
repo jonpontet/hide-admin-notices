@@ -1,17 +1,3 @@
-/*@mixin all-notices($d) {
-  div.error:not(.notice),
-  div.updated:not(.notice),
-  div.notice:not(.updated):not(.error),
-  div.update-nag,
-  div#message:not(.notice):not(.updated):not(.error),
-  form > div.error,
-  form > div.updated:not(.notice),
-  form > div.notice:not(.updated),
-  form > div#message:not(.notice):not(.updated) {
-    display: $d !important;
-    border: 5px solid red !important;
-  }
-}*/
 /**
  * Core styles.
  */
@@ -106,18 +92,6 @@
   margin-right: 20px;
 }
 
-body div.error:not(.inline):not(.below-h2),
-body div.updated:not(.inline):not(.below-h2),
-body div.notice:not(.inline):not(.below-h2),
-body div.update-nag {
-  display: none;
-}
-body #hidden-admin-notices-panel div.error:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.updated:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.update-nag {
-  display: block;
-}
 body.hidden-admin-notices-panel-active {
   /* Hide original WP screen meta links */
   /* Show but make invisible duplicated screen meta links */
@@ -136,20 +110,6 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
   display: block;
 }
 
-/*@mixin all-notices($d) {
-  div.error:not(.notice),
-  div.updated:not(.notice),
-  div.notice:not(.updated):not(.error),
-  div.update-nag,
-  div#message:not(.notice):not(.updated):not(.error),
-  form > div.error,
-  form > div.updated:not(.notice),
-  form > div.notice:not(.updated),
-  form > div#message:not(.notice):not(.updated) {
-    display: $d !important;
-    border: 5px solid red !important;
-  }
-}*/
 /**
  * Specific plugin support.
  */
@@ -186,35 +146,7 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
 }
 
 /* Bootstrap dependency */
-/*@mixin all-notices($d) {
-  div.error:not(.notice),
-  div.updated:not(.notice),
-  div.notice:not(.updated):not(.error),
-  div.update-nag,
-  div#message:not(.notice):not(.updated):not(.error),
-  form > div.error,
-  form > div.updated:not(.notice),
-  form > div.notice:not(.updated),
-  form > div#message:not(.notice):not(.updated) {
-    display: $d !important;
-    border: 5px solid red !important;
-  }
-}*/
 /* Bootstrap dependency */
-/*@mixin all-notices($d) {
-  div.error:not(.notice),
-  div.updated:not(.notice),
-  div.notice:not(.updated):not(.error),
-  div.update-nag,
-  div#message:not(.notice):not(.updated):not(.error),
-  form > div.error,
-  form > div.updated:not(.notice),
-  form > div.notice:not(.updated),
-  form > div#message:not(.notice):not(.updated) {
-    display: $d !important;
-    border: 5px solid red !important;
-  }
-}*/
 /**
  * Core styles.
  */
@@ -309,18 +241,6 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
   margin-right: 20px;
 }
 
-body div.error:not(.inline):not(.below-h2),
-body div.updated:not(.inline):not(.below-h2),
-body div.notice:not(.inline):not(.below-h2),
-body div.update-nag {
-  display: none;
-}
-body #hidden-admin-notices-panel div.error:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.updated:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.notice:not(.inline):not(.below-h2),
-body #hidden-admin-notices-panel div.update-nag {
-  display: block;
-}
 body.hidden-admin-notices-panel-active {
   /* Hide original WP screen meta links */
   /* Show but make invisible duplicated screen meta links */

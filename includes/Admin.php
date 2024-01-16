@@ -36,7 +36,8 @@ class Admin {
     add_action( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 20, 2 );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_start' ), PHP_INT_MIN );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_end' ), PHP_INT_MAX );
-    add_action( 'admin_notices', array( $this, 'add_panel_links' ), 1 );
+    add_action( 'admin_notices', array( $this, 'admin_notices' ), 1 );
+    add_action( 'admin_footer', array( $this, 'admin_footer' ), PHP_INT_MIN );
     add_filter( 'plugin_action_links_' . HIDE_ADMIN_NOTICES_BASENAME, array( $this, 'plugin_action_links' ) );
   }
 
@@ -142,7 +143,7 @@ class Admin {
    *
    * @return void
    */
-  public function add_panel_links() {
+  public function admin_notices() {
     ?>
     <div id="hidden-admin-notices-panel" class="hidden" tabindex="-1"
          aria-label="<?php echo esc_attr__( 'Notifications Tab', 'hide-admin-notices' ); ?> "></div>
@@ -157,5 +158,31 @@ class Admin {
       </button>
     </div>
     <?php
+  }
+
+  /**
+   * Dynamic injection of CSS.
+   *
+   * @return void
+   */
+  public function admin_footer() {
+    $style = array();
+    // Do not hide:
+    // 1) WP important notices e.g. "Plugin activated".
+    // 2) Notices that common.js has not moved i.e. `.inline, .below-h2`.
+    $common_nots = ':not(#message):not(.inline):not(.below-h2)';
+    // Errors.
+    $style[] = "div.error$common_nots { display:none; }";
+    $style[] = "#hidden-admin-notices-panel div.error$common_nots { display:block; }";
+    // Updated notices.
+    $style[] = "div.updated$common_nots { display:none; }";
+    $style[] = "#hidden-admin-notices-panel div.updated$common_nots { display:block; }";
+    // Standard notices.
+    $style[] = "div.notice$common_nots { display:none; }";
+    $style[] = "#hidden-admin-notices-panel div.notice$common_nots { display:block; }";
+    // WP update nag.
+    $style[] = "div.update-nag { display:none; }";
+    $style[] = "#hidden-admin-notices-panel div.update-nag { display:block; }";
+    echo '<style>' . implode("\n", $style) . '</style>';
   }
 }

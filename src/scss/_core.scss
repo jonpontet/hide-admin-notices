@@ -111,14 +111,6 @@
 }
 
 body {
-  // Hide all notices on initial page load.
-  @include all-notices(none);
-
-  // Show all notices when they are in the panel.
-  #hidden-admin-notices-panel {
-    @include all-notices(block);
-  }
-
   // When panel is open.
   &.hidden-admin-notices-panel-active {
 
