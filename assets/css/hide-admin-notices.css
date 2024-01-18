@@ -1,6 +1,15 @@
 /**
  * Core styles.
  */
+#hidden-admin-notices-panel {
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #c3c4c7;
+  margin: 0 20px -1px 0;
+  border-top: none;
+  box-shadow: 0 0 0 transparent;
+}
+
 #hidden-admin-notices-link-wrap {
   display: none;
   float: right;
@@ -150,6 +159,15 @@ body.hidden-admin-notices-active #hidden-admin-notices-link-wrap {
 /**
  * Core styles.
  */
+#hidden-admin-notices-panel {
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #c3c4c7;
+  margin: 0 20px -1px 0;
+  border-top: none;
+  box-shadow: 0 0 0 transparent;
+}
+
 #hidden-admin-notices-link-wrap {
   display: none;
   float: right;

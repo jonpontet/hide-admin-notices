@@ -1,5 +1,5 @@
 === Hide Admin Notices ===
-Contributors: etalented
+Contributors: pontetlabs
 Donate link: https://www.buymeacoffee.com/pontetlabs
 Tags: hide dashboard notifications, hide dashboard notices, hide admin notifications, hide admin notices, hide updates nags, hide wordpress notices, disable update nags, hide nags, disable admin notices, remove notices and warnings, dashboard spam
 Requires at least: 5.9.8
@@ -13,6 +13,8 @@ Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ...
 
 == Description ==
 
+New & improved!
+
 Have you become tired of the clutter of Admin Notices that appear at the top of every page in your WordPress Dashboard?
 
 With each new plugin or theme that you install, there seem to be more and more notices that appear at the top of each page!
@@ -25,7 +27,7 @@ Hide Admin Notices hides away all Notices, Messages, and Update Nags, and makes 
 
 After activating the plugin, you will have a new **Show Notices** button at the top right-hand corner of your admin pages - just next to **Screen Options**.
 
-Click the button to reveal all hidden notices, and simply click the button again to hide them.
+Click the button to reveal all hidden notices, then simply click the button again to hide them.
 
 #### SUPPORT
 
@@ -69,7 +71,8 @@ Simply click the **Hide Notices** button in the top right-hand corner on the scr
 
 = I have no Show Notices button =
 
-Don't worry; this is normal behaviour. The **Show Notices** button appears only when there are hidden notices, thus if you can't see this button, there are no notices that have been hidden.
+Don't worry — this is normal behaviour. The **Show Notices** button appears only when there are hidden notices, thus if you can't see this button, there are no notices that have been hidden.
+
 If, however, there are notices you think should have been hidden and there is no button, please write a message in the [WordPress Support Forum](https://wordpress.org/support/plugin/hide-admin-notices/).
 
 = What configuration is there with this plugin? =
@@ -86,6 +89,17 @@ Great! Please write a message in the [WordPress Support Forum](https://wordpress
 2. Activate this plugin and you will tidy-up the mess!
 
 == Changelog ==
+
+= 2.0.0 =
+* Major rewrite!
+* Prevent the flash of notices appearing on page load.
+* Prevent notices that are "hidden" by default from being shown in the Hide Admin Notices panel.
+* Hide the "Show Notices" tab when other Screen Options tabs are open.
+* Stop hiding plugin update messages on the Plugins page.
+* Stop hiding bulk action and plugin deactivated notices on Plugins page.
+* Stop hiding notices such as "New user created".
+* Add a settings page to report issues with specific plugins.
+* Add a background and border to the panel like Screen Options.
 
 = 1.2.3 =
 * WP 6.4 compatibility

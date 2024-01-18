@@ -22,8 +22,7 @@ const files = {
     css: 'src/scss/*.scss',
     js_glob: 'src/js/*.js',
     js: [
-      'src/js/hide-admin-notices-start.js',
-      'src/js/hide-admin-notices-end.js'
+      'src/js/hide-admin-notices.js',
     ]
   },
   dist: {

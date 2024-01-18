@@ -3,7 +3,18 @@
  */
 @use  './mixins' as *;
 
-// HAN link wrap
+// HAN panel.
+#hidden-admin-notices-panel {
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #c3c4c7;
+  margin: 0 20px -1px 0;
+  border-top: none;
+  box-shadow: 0 0 0 transparent;
+}
+
+
+// HAN link wrap.
 #hidden-admin-notices-link-wrap {
   display: none;
   float: right;
