@@ -1,18 +1,32 @@
 /**
  * Core styles.
  */
-@use  './mixins' as *;
+@use './mixins' as *;
 
 // HAN panel.
-#hidden-admin-notices-panel {
+#hidden-admin-notices-panel-wrap {
+  display: none;
   background-color: #fff;
-  padding: 5px 10px;
+  padding: 18px 18px 2px;
   border: 1px solid #c3c4c7;
   margin: 0 20px -1px 0;
   border-top: none;
   box-shadow: 0 0 0 transparent;
-}
 
+  #hidden-admin-notices-panel {
+    width: 100%;
+
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 // HAN link wrap.
 #hidden-admin-notices-link-wrap {

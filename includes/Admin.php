@@ -51,15 +51,7 @@ class Admin {
       $minified = '';
     }
     $script_vars   = [
-      'panelSelector'           => '#hidden-admin-notices-panel',
-      'linkSelector'            => '#hidden-admin-notices-link',
-      'linkWrapSelector'        => '#hidden-admin-notices-link-wrap',
-      'panelActiveClass'        => 'hidden-admin-notices-panel-active',
-      'captureId'               => 'hidden-admin-notices-capture',
-      'activeBodyClass'         => 'hidden-admin-notices-active',
-      'screenMetaLinksSelector' => '#screen-meta-links',
-      'wpHeaderEndSelector'     => '.wp-header-end',
-      'updateNagSelector'       => 'div.update-nag'
+      'updateNagSelector' => 'div.update-nag'
     ];
     $style_handler = $script_handler = 'hide-admin-notices';
     wp_enqueue_style( $style_handler,
@@ -131,8 +123,10 @@ class Admin {
    */
   public function admin_notices() {
     ?>
-    <div id="hidden-admin-notices-panel" class="hidden" tabindex="-1"
-         aria-label="<?php echo esc_attr__( 'Notifications Tab', 'hide-admin-notices' ); ?> "></div>
+    <div id="hidden-admin-notices-panel-wrap">
+      <div id="hidden-admin-notices-panel" class="hidden" tabindex="-1"
+           aria-label="<?php echo esc_attr__( 'Notifications Tab', 'hide-admin-notices' ); ?> "></div>
+    </div>
     <div id="hidden-admin-notices-link-wrap" class="hide-if-no-js">
       <button type="button" id="hidden-admin-notices-link"
               class="button" aria-controls="hidden-admin-notices-panel" aria-expanded="false">
