@@ -3,23 +3,27 @@
 (function ($) {
   let $document = $(document),
     $body = $('body'),
-    $hanPanel = $(hideAdminNoticesVars.panelSelector),
-    $hanToggleButton = $(hideAdminNoticesVars.linkSelector),
-    $hanToggleButtonWrap = $(hideAdminNoticesVars.linkWrapSelector),
-    $screenMetaLinks = $(hideAdminNoticesVars.screenMetaLinksSelector),
-    $wpHeaderEnd = $(hideAdminNoticesVars.wpHeaderEndSelector),
-    $wpUpdateNag = $(hideAdminNoticesVars.updateNagSelector);
+    $hanPanel = $('#hidden-admin-notices-panel'),
+    $hanPanelWrap = $('#hidden-admin-notices-panel-wrap'),
+    $hanToggleButton = $('#hidden-admin-notices-link'),
+    $hanToggleButtonWrap = $('#hidden-admin-notices-link-wrap'),
+    $screenMetaLinks = $('#screen-meta-links'),
+    $wpHeaderEnd = $('.wp-header-end'),
+    $wpUpdateNag = $(hideAdminNoticesVars.updateNagSelector),
+    captureId = 'hidden-admin-notices-capture',
+    activeBodyClass = 'hidden-admin-notices-active',
+    panelActiveClass = 'hidden-admin-notices-panel-active';
 
   // Capture all notices because WP moves notices to after '.wp-header-end'.
   // See /wp-admin/js/common.js line #1083.
-  $wpHeaderEnd.wrap('<div id="' + hideAdminNoticesVars.captureId + '">');
+  $wpHeaderEnd.wrap('<div id="' + captureId + '">');
 
   // Include the update nag.
-  $wpUpdateNag.detach().prependTo('#' + hideAdminNoticesVars.captureId);
+  $wpUpdateNag.detach().prependTo('#' + captureId);
 
   // Run after common.js.
   $(function () {
-    let notices = $('#' + hideAdminNoticesVars.captureId + ' > *')
+    let notices = $('#' + captureId + ' > *')
       .not('.wp-header-end')
       .not('#message');
 
@@ -28,7 +32,7 @@
     }
 
     // Activate HAN.
-    $body.addClass(hideAdminNoticesVars.activeBodyClass);
+    $body.addClass(activeBodyClass);
 
     // Move notices to han panel.
     notices.each(function () {
@@ -45,18 +49,19 @@
     $hanToggleButton.on('click', function () {
       if ($hanPanel.is(':visible')) {
         $hanPanel.slideUp('fast', function () {
-          $body.removeClass(hideAdminNoticesVars.panelActiveClass);
-          $hanToggleButton
-            .removeClass(hideAdminNoticesVars.panelActiveClass)
-            .attr('aria-expanded', false);
+          $body.removeClass(panelActiveClass);
+          $hanToggleButton.attr('aria-expanded', false)
+          $hanPanelWrap.hide();
+          $hanPanel.addClass('hidden');
         });
       } else {
-        $body.addClass(hideAdminNoticesVars.panelActiveClass);
+        $body.addClass(panelActiveClass);
+        $hanPanelWrap.show();
         $hanPanel.slideDown('fast', function () {
-          this.focus();
-          $hanToggleButton
-            .addClass(hideAdminNoticesVars.panelActiveClass)
-            .attr('aria-expanded', true);
+          $hanPanel
+            .addClass('hidden')
+            .trigger('focus');
+          $hanToggleButton.attr('aria-expanded', true);
         });
       }
     });

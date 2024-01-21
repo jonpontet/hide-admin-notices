@@ -130,11 +130,14 @@ class Admin {
     <div id="hidden-admin-notices-link-wrap" class="hide-if-no-js">
       <button type="button" id="hidden-admin-notices-link"
               class="button" aria-controls="hidden-admin-notices-panel" aria-expanded="false">
-        <span class="hidden-admin-notices-link-icon" aria-hidden="true"></span>
-        <span class="hidden-admin-notices-link-text-show"
-              aria-label="<?php echo esc_html__( 'Show Notices', 'hide-admin-notices' ); ?>"><?php echo esc_html__( 'Show Notices', 'hide-admin-notices' ); ?></span>
-        <span class="hidden-admin-notices-link-text-hide"
-              aria-label="<?php echo esc_html__( 'Hide Notices', 'hide-admin-notices' ); ?>"><?php echo esc_html__( 'Hide Notices', 'hide-admin-notices' ); ?></span>
+        <span class="hidden-admin-notices-link-mobile-icon" aria-hidden="true"></span>
+        <span class="hidden-admin-notices-link-text">
+          <span class="hidden-admin-notices-link-text-show"
+                aria-label="<?php echo esc_html__( 'Show Notices', 'hide-admin-notices' ); ?>"><?php echo esc_html__( 'Show Notices', 'hide-admin-notices' ); ?></span>
+          <span class="hidden-admin-notices-link-text-hide"
+                aria-label="<?php echo esc_html__( 'Hide Notices', 'hide-admin-notices' ); ?>"><?php echo esc_html__( 'Hide Notices', 'hide-admin-notices' ); ?></span>
+        </span>
+        <span class="hidden-admin-notices-link-dot" aria-hidden="true"></span>
       </button>
     </div>
     <?php

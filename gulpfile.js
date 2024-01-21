@@ -19,7 +19,8 @@ const minify = composer(uglifyJs, console);
 
 const files = {
   src: {
-    css: 'src/scss/*.scss',
+    css_glob: 'src/scss/*.scss',
+    css: 'src/scss/hide-admin-notices.scss',
     js_glob: 'src/js/*.js',
     js: [
       'src/js/hide-admin-notices.js',
@@ -67,7 +68,7 @@ gulp.task('js',
 gulp.task('watch',
   function () {
     gulp.watch(
-      [files.src.css, files.src.js_glob],
+      [files.src.css_glob, files.src.js_glob],
       {interval: 1000, usePolling: true},
       gulp.parallel('css', 'js')
     );
