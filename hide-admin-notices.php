@@ -7,8 +7,8 @@
  * @wordpress-plugin
  * Plugin Name:       Hide Admin Notices
  * Plugin URI:        https://pontetlabs.com/hide-admin-notices
- * Description:       Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... for everything!
- * Version:           1.2.2
+ * Description:       New & improved! Hide – or show – WordPress Dashboard Notices, Messages, Update Nags etc. ... for everything!
+ * Version:           2.0
  * Author:            PontetLabs
  * Author URI:        https://pontetlabs.com
  * License:           GPL-2.0+
@@ -17,28 +17,57 @@
  * Domain Path:       /languages
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+/** @noinspection PhpDefineCanBeReplacedWithConstInspection */
+
+use Pontet_Labs\Hide_Admin_Notices\Hide_Admin_Notices;
+
+// Exit if accessed directly.
+defined('ABSPATH') or exit;
+
+// Define core constants.
+define('HIDE_ADMIN_NOTICES_VERSION', '2.0');
+define('HIDE_ADMIN_NOTICES_DIR', plugin_dir_path(__FILE__));
+define('HIDE_ADMIN_NOTICES_URL', plugin_dir_url(__FILE__));
+define('HIDE_ADMIN_NOTICES_BASENAME', plugin_basename(__FILE__));
+
+require_once HIDE_ADMIN_NOTICES_DIR . 'includes/HideAdminNotices.php';
+
+function autoload_classes()
+{
+    $class_map = array_merge(
+        include HIDE_ADMIN_NOTICES_DIR . 'vendor/composer/autoload_classmap.php',
+    );
+
+    spl_autoload_register(
+        function ($class) use ($class_map) {
+            if (
+                isset($class_map[$class])
+                && (
+                    str_starts_with($class, 'Pontet_Labs')
+                    || str_starts_with($class, 'Twig')
+                    || file_exists($class_map[$class])
+                )
+            ) {
+                require_once $class_map[$class];
+            }
+        },
+        true,
+        true
+    );
 }
 
-/**
- * Define path to this file constant.
- *
- * @since    1.0.0
- */
-define( 'HIDE_ADMIN_NOTICES_PLUGIN_FILE', __FILE__ );
+autoload_classes();
 
-require plugin_dir_path( HIDE_ADMIN_NOTICES_PLUGIN_FILE ) . 'includes/class-hide-admin-notices.php';
+function hide_admin_notices(): bool
+{
+    if (null !== Hide_Admin_Notices::$instance) {
+        return false;
+    }
 
-/**
- * Begins execution of the plugin.
- *
- * @since    1.0.0
- */
-function run_hide_admin_notices() {
-	$plugin = new Hide_Admin_Notices();
-	$plugin->run();
+    Hide_Admin_Notices::$instance = new Hide_Admin_Notices();
+    Hide_Admin_Notices::$instance->init();
+
+    return true;
 }
 
-run_hide_admin_notices();
+hide_admin_notices();

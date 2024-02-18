@@ -1,0 +1,23 @@
+{
+    "name": "jonpontet/hide-admin-notices",
+    "autoload": {
+        "classmap": [
+            "includes/",
+            "vendor/twig/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jon Pontet",
+            "email": "jonpontet@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.8"
+    }
+}
