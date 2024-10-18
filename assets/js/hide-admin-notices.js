@@ -14,8 +14,7 @@
     activeBodyClass = 'hidden-admin-notices-active',
     panelActiveClass = 'hidden-admin-notices-panel-active';
 
-  // Capture all notices because WP moves notices to after '.wp-header-end'.
-  // See /wp-admin/js/common.js line #1083.
+  // Wrap a capture element around ".wp-header-end" if it exists.
   $wpHeaderEnd.wrap('<div id="' + captureId + '">');
 
   // Include the update nag.
@@ -23,11 +22,27 @@
 
   // Run after common.js.
   $(function () {
-    let notices = $('#' + captureId + ' > *')
-      .not('.wp-header-end')
-      .not('#message');
+    let $notices;
 
-    if (!notices.length) {
+    // Cater for admin pages:
+    // 1) with the ".wp-header-end" element, and messages are moved to after that;
+    // 2) without ".wp-header-end", and messages are  moved after the first ".wrap h1" or ".wrap h2".
+    if ($wpHeaderEnd.length) {
+      // Ignore: the '.wp-header-end' element itself; and '#message' elements (excluding woocommerce specific messages).
+      $notices = $('#' + captureId + ' > *')
+        .not('.wp-header-end')
+        .not('#message:not(.woocommerce-message)');
+    } else {
+      // This matches /wp-admin/js/common.js line #1083.
+      $notices = $('div.updated, div.error, div.notice', '.wrap').not('.inline, .below-h2');
+    }
+
+    init($notices);
+  });
+
+  function init($notices) {
+
+    if (!$notices.length) {
       return;
     }
 
@@ -35,7 +50,7 @@
     $body.addClass(activeBodyClass);
 
     // Move notices to han panel.
-    notices.each(function () {
+    $notices.each(function () {
         $(this)
           .detach()
           .appendTo($hanPanel);
@@ -50,7 +65,7 @@
       if ($hanPanel.is(':visible')) {
         $hanPanel.slideUp('fast', function () {
           $body.removeClass(panelActiveClass);
-          $hanToggleButton.attr('aria-expanded', false)
+          $hanToggleButton.attr('aria-expanded', false);
           $hanPanelWrap.hide();
           $hanPanel.addClass('hidden');
         });
@@ -70,11 +85,11 @@
     $document.on('screen:options:open', function () {
       $hanToggleButtonWrap.fadeOut('fast', function () {
         $(this).css('visibility', 'hidden');
-      })
+      });
     }).on('screen:options:close', function () {
       $hanToggleButtonWrap.fadeIn('fast', function () {
         $(this).css('visibility', '');
-      })
-    })
-  });
+      });
+    });
+  }
 })(jQuery);
